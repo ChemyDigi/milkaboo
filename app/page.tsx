@@ -6,7 +6,7 @@ import FlavorSection from "@/components/FlavorSection";
 
 export default function Home() {
   return (
-    <div className="relative w-full min-h-screen flex flex-col items-center justify-start bg-[#ede6f6] overflow-x-hidden">
+    <div className="relative w-full min-h-screen flex flex-col items-center justify-start bg-[#ede6f6]">
       {/* Background Image Layer with Reduced Opacity */}
       <div className="fixed inset-0 w-full h-full pointer-events-none select-none z-0 opacity-40">
         <Image
