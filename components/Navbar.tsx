@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { X } from "lucide-react";
 
 // Crisp SVG Icons for Facebook & Instagram
@@ -169,6 +170,7 @@ function CustomHamburgerIcon({ className = "" }: { className?: string }) {
 }
 
 interface NavbarProps {
+  logoSrc?: string;
   logoText?: string;
   facebookUrl?: string;
   instagramUrl?: string;
@@ -176,7 +178,8 @@ interface NavbarProps {
 }
 
 export default function Navbar({
-  logoText = "BOMBON",
+  logoSrc = "/images/logoTypo.png",
+  logoText = "MILKABOO",
   facebookUrl = "https://facebook.com",
   instagramUrl = "https://instagram.com",
   linkedinUrl = "https://linkedin.com",
@@ -193,16 +196,27 @@ export default function Navbar({
         }`}
       >
         <div className="w-full px-6 sm:px-12 md:px-16 lg:px-20 xl:px-24 h-28 flex items-center justify-between">
-          {/* Left: Brand Logo */}
+          {/* Left: Brand Logo Image */}
           <div className="flex-1 flex items-center justify-start">
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
               className="group inline-flex items-center transition-transform active:scale-95 z-50"
             >
-              <span className="text-3xl sm:text-4xl md:text-5xl font-[family-name:var(--font-luckiest-guy)] uppercase tracking-wider text-neutral-950 hover:text-black transition-colors select-none">
-                {logoText}
-              </span>
+              {logoSrc ? (
+                <Image
+                  src={logoSrc}
+                  alt="Milkaboo Logo"
+                  width={200}
+                  height={60}
+                  className="h-8 sm:h-9 md:h-10 lg:h-11 w-auto object-contain select-none"
+                  priority
+                />
+              ) : (
+                <span className="text-3xl sm:text-4xl md:text-5xl font-[family-name:var(--font-luckiest-guy)] uppercase tracking-wider text-neutral-950 hover:text-black transition-colors select-none">
+                  {logoText}
+                </span>
+              )}
             </Link>
           </div>
 
@@ -404,9 +418,16 @@ export default function Navbar({
         </div>
 
         {/* Bottom Footer Section */}
-        <div className="relative z-10 w-full px-6 sm:px-12 md:px-16 lg:px-20 xl:px-24 pb-8 flex items-center justify-center">
-          <div className="text-[11px] sm:text-xs font-semibold text-neutral-800/80 tracking-wide select-none">
-            ©2026 Bombon. All rights reserved.
+        <div className="relative z-10 w-full px-6 sm:px-12 md:px-16 lg:px-20 xl:px-24 pb-8 flex flex-col items-center justify-center gap-2.5">
+          <Image
+            src="/images/logo.png"
+            alt="Milkaboo Logo"
+            width={140}
+            height={50}
+            className="h-9 sm:h-11 w-auto object-contain select-none opacity-90 drop-shadow-sm"
+          />
+          <div className="text-[11px] sm:text-xs font-semibold text-neutral-800/90 tracking-wide select-none">
+            ©2026 Milkaboo. All rights reserved.
           </div>
         </div>
       </div>

@@ -1,45 +1,22 @@
+"use client";
+
 import React from "react";
-import Link from "next/link";
-import { ArrowUpRight, Sparkles, Heart } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex-1 w-full bg-white flex flex-col items-center justify-start min-h-[calc(100vh-80px)]">
-      {/* Hero Section */}
-      <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 flex flex-col items-center text-center">
-        {/* Subtle Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-purple-200 shadow-xs text-xs sm:text-sm font-semibold text-neutral-800 mb-8 backdrop-blur-sm">
-          <Sparkles className="w-4 h-4 text-purple-600" />
-          <span>New Collection 2026</span>
-        </div>
-
-        {/* Headline */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-neutral-900 max-w-4xl leading-[1.1]">
-          Delightful Treats & Sweet Moments
+    <div className="relative w-full min-h-[calc(100vh-112px)] flex flex-col items-center justify-center overflow-x-hidden px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      {/* Hero Content */}
+      <section className="relative w-full max-w-7xl mx-auto flex flex-col items-center text-center z-10">
+        {/* Main Headline */}
+        <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[130px] xl:text-[160px] font-[family-name:var(--font-luckiest-guy)] text-neutral-950 uppercase tracking-tight leading-[0.88] sm:leading-[0.85] select-none">
+          TASTE THE BOO <br />
+          MAGIC
         </h1>
 
-        <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl font-medium leading-relaxed">
-          Crafted with love, passion, and sweetness. Explore our latest collection
-          of handmade confections and artisanal delights.
+        {/* Subtitle */}
+        <p className="mt-3 sm:mt-5 text-base sm:text-lg md:text-xl lg:text-2xl font-[family-name:var(--font-sansita)] font-bold text-neutral-800 max-w-xl sm:max-w-2xl mx-auto leading-snug select-none">
+          Where every sip is packed with bubbles, sweetness, and a little bit of magic.
         </p>
-
-        {/* Action Buttons */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Link
-            href="#shop"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-neutral-900 text-white font-semibold shadow-md hover:bg-neutral-800 active:scale-95 transition-all duration-200 group cursor-pointer"
-          >
-            <span>Explore Shop</span>
-            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
-
-          <Link
-            href="#about"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-white border border-neutral-200 text-neutral-800 font-semibold shadow-xs hover:bg-neutral-50 active:scale-95 transition-all duration-200 cursor-pointer"
-          >
-            <span>Our Story</span>
-          </Link>
-        </div>
       </section>
     </div>
   );
