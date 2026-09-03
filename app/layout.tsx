@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Luckiest_Guy, Sansita } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${luckiestGuy.variable} ${sansita.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#ede6f6] text-neutral-900">
+        <SmoothScroll />
         <Navbar logoSrc="/images/logoTypo.png" />
         <main className="flex-1 flex flex-col bg-[#ede6f6]">{children}</main>
       </body>
