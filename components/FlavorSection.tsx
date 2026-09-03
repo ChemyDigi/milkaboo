@@ -56,33 +56,33 @@ const flavorsData: FlavorProduct[] = [
       {
         src: "/images/rosemilka1.png",
         alt: "Rose Flower",
-        posClass: "-top-6 -left-6",
-        hoverPosClass: "group-hover:-translate-x-4 group-hover:-translate-y-4 group-hover:-rotate-12",
-        sizeClass: "w-20 h-20 sm:w-24 sm:h-24",
+        posClass: "-top-8 -left-8",
+        hoverPosClass: "group-hover:-translate-x-5 group-hover:-translate-y-5 group-hover:-rotate-12",
+        sizeClass: "w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32",
         animation: "animate-float-gentle",
       },
       {
         src: "/images/rosemilka2.png",
         alt: "Pink Ice Cubes",
-        posClass: "-top-4 -right-4",
-        hoverPosClass: "group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-12",
-        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
+        posClass: "-top-6 -right-6",
+        hoverPosClass: "group-hover:translate-x-5 group-hover:-translate-y-5 group-hover:rotate-12",
+        sizeClass: "w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28",
         animation: "animate-float-reverse",
       },
       {
         src: "/images/boba1.png",
         alt: "Boba Pearls",
-        posClass: "bottom-4 -left-6",
-        hoverPosClass: "group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-6",
-        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
+        posClass: "bottom-6 -left-8",
+        hoverPosClass: "group-hover:-translate-x-4 group-hover:translate-y-4 group-hover:-rotate-6",
+        sizeClass: "w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28",
         animation: "animate-float-gentle",
       },
       {
         src: "/images/rosemilka4.png",
         alt: "Rose Bubble",
-        posClass: "bottom-4 -right-6",
-        hoverPosClass: "group-hover:translate-x-4 group-hover:translate-y-3 group-hover:rotate-12",
-        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
+        posClass: "bottom-6 -right-8",
+        hoverPosClass: "group-hover:translate-x-5 group-hover:translate-y-4 group-hover:rotate-12",
+        sizeClass: "w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28",
         animation: "animate-float-reverse",
       },
     ],
@@ -110,33 +110,33 @@ const flavorsData: FlavorProduct[] = [
       {
         src: "/images/applemilka1.png",
         alt: "Apple Slices",
-        posClass: "-top-8 -left-8",
-        hoverPosClass: "group-hover:-translate-x-4 group-hover:-translate-y-4 group-hover:-rotate-12",
-        sizeClass: "w-24 h-24 sm:w-28 sm:h-28",
+        posClass: "-top-10 -left-10",
+        hoverPosClass: "group-hover:-translate-x-5 group-hover:-translate-y-5 group-hover:-rotate-12",
+        sizeClass: "w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36",
         animation: "animate-float-gentle",
       },
       {
         src: "/images/applemilka2.png",
         alt: "Whole Green Apple",
-        posClass: "-top-6 -right-6",
-        hoverPosClass: "group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-12",
-        sizeClass: "w-20 h-20 sm:w-24 sm:h-24",
+        posClass: "-top-8 -right-8",
+        hoverPosClass: "group-hover:translate-x-5 group-hover:-translate-y-5 group-hover:rotate-12",
+        sizeClass: "w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32",
         animation: "animate-float-reverse",
       },
       {
         src: "/images/boba1.png",
         alt: "Black Boba Pearls",
-        posClass: "bottom-4 -left-6",
-        hoverPosClass: "group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-6",
-        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
+        posClass: "bottom-6 -left-8",
+        hoverPosClass: "group-hover:-translate-x-4 group-hover:translate-y-4 group-hover:-rotate-6",
+        sizeClass: "w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28",
         animation: "animate-float-gentle",
       },
       {
         src: "/images/boba2.png",
         alt: "Single Boba Pearl",
-        posClass: "bottom-4 -right-4",
-        hoverPosClass: "group-hover:translate-x-4 group-hover:translate-y-3 group-hover:rotate-12",
-        sizeClass: "w-14 h-14 sm:w-18 sm:h-18",
+        posClass: "bottom-6 -right-6",
+        hoverPosClass: "group-hover:translate-x-5 group-hover:translate-y-4 group-hover:rotate-12",
+        sizeClass: "w-18 h-18 sm:w-22 sm:h-22 md:w-26 md:h-26",
         animation: "animate-float-reverse",
       },
     ],
@@ -164,33 +164,33 @@ const flavorsData: FlavorProduct[] = [
       {
         src: "/images/blackcurrentmilka2.png",
         alt: "Blackcurrant Cluster",
-        posClass: "-top-8 -left-8",
-        hoverPosClass: "group-hover:-translate-x-4 group-hover:-translate-y-4 group-hover:-rotate-12",
-        sizeClass: "w-24 h-24 sm:w-28 sm:h-28",
+        posClass: "-top-10 -left-10",
+        hoverPosClass: "group-hover:-translate-x-5 group-hover:-translate-y-5 group-hover:-rotate-12",
+        sizeClass: "w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36",
         animation: "animate-float-gentle",
       },
       {
         src: "/images/blackcurrentmilka7.png",
         alt: "Single Blackcurrant",
-        posClass: "-top-6 -right-6",
-        hoverPosClass: "group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-12",
-        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
+        posClass: "-top-8 -right-8",
+        hoverPosClass: "group-hover:translate-x-5 group-hover:-translate-y-5 group-hover:rotate-12",
+        sizeClass: "w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28",
         animation: "animate-float-reverse",
       },
       {
         src: "/images/blackcurrentmilka1.png",
         alt: "Boba Pearls Cluster",
-        posClass: "bottom-4 -left-6",
-        hoverPosClass: "group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-6",
-        sizeClass: "w-18 h-18 sm:w-22 sm:h-22",
+        posClass: "bottom-6 -left-8",
+        hoverPosClass: "group-hover:-translate-x-4 group-hover:translate-y-4 group-hover:-rotate-6",
+        sizeClass: "w-22 h-22 sm:w-26 sm:h-26 md:w-30 md:h-30",
         animation: "animate-float-gentle",
       },
       {
         src: "/images/boba1.png",
         alt: "Tapioca Boba",
-        posClass: "bottom-4 -right-4",
-        hoverPosClass: "group-hover:translate-x-4 group-hover:translate-y-3 group-hover:rotate-12",
-        sizeClass: "w-14 h-14 sm:w-18 sm:h-18",
+        posClass: "bottom-6 -right-6",
+        hoverPosClass: "group-hover:translate-x-5 group-hover:translate-y-4 group-hover:rotate-12",
+        sizeClass: "w-18 h-18 sm:w-22 sm:h-22 md:w-26 md:h-26",
         animation: "animate-float-reverse",
       },
     ],
@@ -203,7 +203,7 @@ export default function FlavorSection() {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [scrollTranslate, setScrollTranslate] = useState(0);
 
   const toggleFavorite = (id: string) => {
     setFavorites((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -214,70 +214,79 @@ export default function FlavorSection() {
     setTimeout(() => setAddedId(null), 1800);
   };
 
-  // Parallax horizontal pinning scroll calculation
+  // Phase 1 (0 to 12%): Fixed stop where all 3 products are presented in view
+  // Phase 2 (12% to 88%): Smooth horizontal scroll traversing the products across the screen
+  // Phase 3 (88% to 100%): Settled pause at the end, followed by buffer gap before continuing down
   useEffect(() => {
     const handleScroll = () => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || !trackRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       const totalDist = containerRef.current.offsetHeight - window.innerHeight;
 
       if (totalDist <= 0) return;
 
-      // Distance from when the top of container hits top of viewport
+      // Distance from top of viewport
       const current = -rect.top;
       const progress = Math.min(Math.max(current / totalDist, 0), 1);
-      setScrollProgress(progress);
+
+      // Max horizontal translation in pixels
+      const maxScrollX = Math.max(
+        0,
+        trackRef.current.scrollWidth - window.innerWidth + 120
+      );
+
+      // Map progress with pause at beginning and end
+      const startPause = 0.10;
+      const endPause = 0.88;
+
+      let horizontalFraction = 0;
+      if (progress <= startPause) {
+        horizontalFraction = 0;
+      } else if (progress >= endPause) {
+        horizontalFraction = 1;
+      } else {
+        horizontalFraction = (progress - startPause) / (endPause - startPause);
+      }
+
+      setScrollTranslate(horizontalFraction * maxScrollX);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
-
-  // Compute horizontal translate percentage
-  // Total cards = 3. On large desktop we translate ~38-42% to reveal the 3rd card completely.
-  const translateX = scrollProgress * 38;
 
   return (
     <div
       ref={containerRef}
       id="flavors"
-      className="relative w-full h-[280vh] bg-[#ede6f6]"
+      className="relative w-full h-[380vh] bg-[#ede6f6] pb-32 sm:pb-48"
     >
-      {/* Sticky viewport container (stays pinned while user scrolls through the 300vh height) */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center px-4 sm:px-8 lg:px-16">
-        {/* Top Header Section matching the exact screenshot */}
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-start mb-6 lg:mb-10 shrink-0">
+      {/* Sticky viewport container (stays fixed while user scrolls through) */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center px-6 sm:px-12 lg:px-20 z-20">
+        {/* Top Header Section */}
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-start mb-6 sm:mb-8 lg:mb-12 shrink-0">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 mb-3 rounded-full text-xs font-bold uppercase tracking-widest bg-purple-200/80 text-purple-900">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 mb-3 rounded-full text-xs font-bold uppercase tracking-widest bg-purple-200/90 text-purple-900 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-purple-700" />
               <span>Signature Flavors</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[family-name:var(--font-luckiest-guy)] tracking-tight text-neutral-950 uppercase leading-[0.95] select-none">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-[family-name:var(--font-luckiest-guy)] tracking-tight text-neutral-950 uppercase leading-[0.93] select-none">
               4 Flavor Mixes <br />
               Beloved Across <br />
               The Land
             </h2>
           </div>
 
-          <div className="pt-1 lg:pt-6 flex flex-col justify-between">
-            <p className="text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed font-medium">
+          <div className="pt-2 lg:pt-6 flex flex-col justify-between">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-neutral-700 leading-relaxed font-medium max-w-xl">
               The most celebrated bubble tea creations in the realm. Every cup is a little spell: color, texture, and taste woven into a moment of pure wonder. At Milkaboo, we elevate bubble tea into something truly enchanting.
             </p>
-
-            {/* Scroll Indicator Bar */}
-            <div className="mt-4 flex items-center gap-3">
-              <span className="text-xs font-bold text-neutral-500 uppercase tracking-wider">
-                Scroll to explore ({Math.round(scrollProgress * 100)}%)
-              </span>
-              <div className="h-1.5 w-32 bg-purple-200 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-neutral-900 rounded-full transition-all duration-150 ease-out"
-                  style={{ width: `${Math.max(scrollProgress * 100, 10)}%` }}
-                />
-              </div>
-            </div>
           </div>
         </div>
 
@@ -285,9 +294,9 @@ export default function FlavorSection() {
         <div className="relative w-full overflow-visible">
           <div
             ref={trackRef}
-            className="flex items-center gap-8 sm:gap-10 lg:gap-12 transition-transform duration-100 ease-out will-change-transform"
+            className="flex items-center gap-10 sm:gap-14 lg:gap-16 pl-2 pr-24 transition-transform duration-75 ease-out will-change-transform"
             style={{
-              transform: `translate3d(-${translateX}%, 0, 0)`,
+              transform: `translate3d(-${scrollTranslate}px, 0, 0)`,
             }}
           >
             {flavorsData.map((item, index) => {
@@ -297,44 +306,44 @@ export default function FlavorSection() {
               return (
                 <div
                   key={item.id}
-                  className="group relative flex-none w-[320px] sm:w-[420px] md:w-[480px] lg:w-[520px] select-none cursor-pointer"
+                  className="group relative flex-none w-[360px] sm:w-[480px] md:w-[560px] lg:w-[620px] xl:w-[680px] select-none cursor-pointer"
                 >
-                  {/* Outer Rounded Product Card Backdrop matching screenshot */}
-                  <div className="relative w-full aspect-[4/3] rounded-[32px] sm:rounded-[40px] overflow-hidden flex items-center justify-center shadow-lg transition-all duration-500 group-hover:shadow-2xl">
+                  {/* Outer Rounded Product Card Backdrop (Larger size) */}
+                  <div className="relative w-full aspect-[16/11] rounded-[36px] sm:rounded-[48px] overflow-hidden flex items-center justify-center shadow-xl transition-all duration-500 group-hover:shadow-2xl">
                     {/* Rounded Colored Card Background */}
                     <div className={`absolute inset-0 ${item.cardBg}`} />
 
                     {/* Subtle Backdrop Pattern */}
                     {item.cardPattern && (
                       <div
-                        className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay transition-transform duration-700 group-hover:scale-110"
+                        className="absolute inset-0 bg-cover bg-center opacity-35 mix-blend-overlay transition-transform duration-700 group-hover:scale-110"
                         style={{ backgroundImage: `url('${item.cardPattern}')` }}
                       />
                     )}
 
-                    {/* Floating Boba & Fruit Toppings (Pop out on hover with parallax depth) */}
+                    {/* Floating Boba & Fruit Toppings (Increased size & pop-outs) */}
                     {item.floatElements.map((elem, idx) => (
                       <div
                         key={idx}
-                        className={`absolute z-20 ${elem.sizeClass} ${elem.posClass} ${elem.hoverPosClass} transition-all duration-500 ease-out pointer-events-none drop-shadow-xl ${elem.animation}`}
+                        className={`absolute z-20 ${elem.sizeClass} ${elem.posClass} ${elem.hoverPosClass} transition-all duration-500 ease-out pointer-events-none drop-shadow-2xl ${elem.animation}`}
                       >
                         <Image
                           src={elem.src}
                           alt={elem.alt}
                           fill
-                          sizes="120px"
+                          sizes="(max-width: 768px) 120px, 180px"
                           className="object-contain"
                         />
                       </div>
                     ))}
 
-                    {/* Main Featured Drink Cup Standing in the center */}
-                    <div className="relative z-10 w-44 h-64 sm:w-56 sm:h-80 md:w-64 md:h-88 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-2 drop-shadow-[0_20px_35px_rgba(0,0,0,0.25)]">
+                    {/* Main Featured Drink Cup (Prominently Larger) */}
+                    <div className="relative z-10 w-52 h-76 sm:w-68 sm:h-96 md:w-80 md:h-[430px] lg:w-92 lg:h-[480px] transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-3 drop-shadow-[0_25px_40px_rgba(0,0,0,0.28)]">
                       <Image
                         src={item.image}
                         alt={item.name}
                         fill
-                        sizes="(max-width: 768px) 300px, 400px"
+                        sizes="(max-width: 768px) 350px, 550px"
                         className="object-contain"
                         priority={index === 0}
                       />
@@ -347,42 +356,42 @@ export default function FlavorSection() {
                         toggleFavorite(item.id);
                       }}
                       aria-label="Add to favorites"
-                      className="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-white/85 backdrop-blur-md text-neutral-600 hover:text-rose-500 hover:bg-white shadow-sm transition-transform active:scale-125 cursor-pointer"
+                      className="absolute top-5 right-5 z-30 p-3 rounded-full bg-white/85 backdrop-blur-md text-neutral-600 hover:text-rose-500 hover:bg-white shadow-md transition-transform active:scale-125 cursor-pointer"
                     >
                       <Heart
-                        className={`w-4 h-4 ${
+                        className={`w-5 h-5 ${
                           isFav ? "fill-rose-500 text-rose-500" : ""
                         }`}
                       />
                     </button>
                   </div>
 
-                  {/* Card Bottom Meta: Exact same typography and pill button as screenshot */}
-                  <div className="mt-5 flex flex-col items-start">
+                  {/* Card Bottom Meta */}
+                  <div className="mt-6 flex flex-col items-start px-2">
                     <div className="flex items-center justify-between w-full">
-                      <h3 className="text-2xl sm:text-3xl font-[family-name:var(--font-luckiest-guy)] text-neutral-950 uppercase tracking-tight leading-tight">
+                      <h3 className="text-3xl sm:text-4xl md:text-5xl font-[family-name:var(--font-luckiest-guy)] text-neutral-950 uppercase tracking-tight leading-tight">
                         {item.name}
                       </h3>
-                      <div className="flex items-center gap-1 bg-white/80 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-neutral-200">
-                        <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                        <span className="text-xs font-bold text-neutral-800">
+                      <div className="flex items-center gap-1.5 bg-white/85 backdrop-blur-xs px-3 py-1 rounded-full border border-neutral-200/80 shadow-xs">
+                        <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                        <span className="text-xs sm:text-sm font-bold text-neutral-800">
                           {item.rating}
                         </span>
                       </div>
                     </div>
 
-                    <p className="mt-1.5 text-xs sm:text-sm text-neutral-700 font-medium line-clamp-2 max-w-md leading-snug">
+                    <p className="mt-2 text-sm sm:text-base text-neutral-700 font-medium line-clamp-2 max-w-xl leading-snug">
                       {item.tagline}
                     </p>
 
-                    {/* SHOP NOW / ORDER NOW Pill Button matching the screenshot (Lime neon pill) */}
-                    <div className="mt-4">
+                    {/* SHOP NOW Button */}
+                    <div className="mt-5">
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
                           handleAddToCart(item.id);
                         }}
-                        className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider shadow-sm active:scale-95 transition-all duration-200 cursor-pointer ${
+                        className={`inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider shadow-sm active:scale-95 transition-all duration-200 cursor-pointer ${
                           isAdded
                             ? "bg-emerald-600 text-white"
                             : `${item.btnBg} hover:shadow-md`
@@ -395,7 +404,7 @@ export default function FlavorSection() {
                           </>
                         ) : (
                           <>
-                            <ShoppingBag className="w-3.5 h-3.5" />
+                            <ShoppingBag className="w-4 h-4" />
                             <span>SHOP NOW</span>
                           </>
                         )}
