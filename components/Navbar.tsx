@@ -236,16 +236,16 @@ export default function Navbar({
           </div>
 
           {/* Right: Social Media Icons (Facebook & Instagram) */}
-          <div className="flex-1 flex items-center justify-end gap-4 sm:gap-6 md:gap-8 z-50">
+          <div className="flex-1 flex items-center justify-end gap-1.5 sm:gap-2 z-50">
             {/* Facebook Link */}
             <a
               href={facebookUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="p-3 rounded-full text-neutral-800 hover:text-black hover:bg-white/40 border border-transparent hover:border-neutral-200/50 shadow-xs transition-all duration-200 active:scale-95 group"
+              className="p-2 sm:p-2.5 rounded-full text-neutral-800 hover:text-black hover:bg-white/40 border border-transparent hover:border-neutral-200/50 shadow-xs transition-all duration-200 active:scale-95 group"
             >
-              <FacebookIcon className="w-6 h-6 transition-transform group-hover:scale-110" />
+              <FacebookIcon className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:scale-110" />
             </a>
 
             {/* Instagram Link */}
@@ -254,9 +254,9 @@ export default function Navbar({
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="p-3 rounded-full text-neutral-800 hover:text-black hover:bg-white/40 border border-transparent hover:border-neutral-200/50 shadow-xs transition-all duration-200 active:scale-95 group"
+              className="p-2 sm:p-2.5 rounded-full text-neutral-800 hover:text-black hover:bg-white/40 border border-transparent hover:border-neutral-200/50 shadow-xs transition-all duration-200 active:scale-95 group"
             >
-              <InstagramIcon className="w-6 h-6 transition-transform group-hover:scale-110" />
+              <InstagramIcon className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:scale-110" />
             </a>
           </div>
         </div>
