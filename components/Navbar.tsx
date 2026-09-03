@@ -329,7 +329,7 @@ export default function Navbar({
 
               {/* PRODUCTS Link */}
               <Link
-                href="#products"
+                href="/products"
                 onClick={() => setIsOpen(false)}
                 onMouseEnter={() => setHoveredLink("PRODUCTS")}
                 onMouseLeave={() => setHoveredLink(null)}
@@ -355,7 +355,7 @@ export default function Navbar({
             >
               {/* ABOUT Link */}
               <Link
-                href="#about"
+                href="/about"
                 onClick={() => setIsOpen(false)}
                 onMouseEnter={() => setHoveredLink("ABOUT")}
                 onMouseLeave={() => setHoveredLink(null)}
@@ -385,7 +385,7 @@ export default function Navbar({
 
               {/* CONTACT Link */}
               <Link
-                href="#contact"
+                href="/contact"
                 onClick={() => setIsOpen(false)}
                 onMouseEnter={() => setHoveredLink("CONTACT")}
                 onMouseLeave={() => setHoveredLink(null)}
