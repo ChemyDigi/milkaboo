@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Luckiest_Guy } from "next/font/google";
+import { Geist, Geist_Mono, Luckiest_Guy, Sansita } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
@@ -19,6 +19,12 @@ const luckiestGuy = Luckiest_Guy({
   subsets: ["latin"],
 });
 
+const sansita = Sansita({
+  weight: ["400", "700", "800", "900"],
+  variable: "--font-sansita",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "MILKABOO",
   description: "Welcome to MILKABOO",
@@ -32,11 +38,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${luckiestGuy.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${luckiestGuy.variable} ${sansita.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-neutral-900">
-        <Navbar logoText="BOMBON" />
-        <main className="flex-1 flex flex-col bg-white">{children}</main>
+      <body className="min-h-full flex flex-col bg-[#ede6f6] text-neutral-900">
+        <Navbar logoSrc="/images/logoTypo.png" />
+        <main className="flex-1 flex flex-col bg-[#ede6f6]">{children}</main>
       </body>
     </html>
   );
