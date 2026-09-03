@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Sparkles, ShoppingBag, Heart, Star, Check } from "lucide-react";
 
@@ -14,9 +14,13 @@ interface FlavorProduct {
   rating: number;
   reviewsCount: number;
   image: string;
+  cardBg: string; // Background backdrop styling for the card banner
+  cardPattern?: string; // Subtle backdrop image or pattern
   accentColor: string;
   badgeBg: string;
   badgeText: string;
+  btnBg: string;
+  btnText: string;
   notes: string[];
   floatElements: {
     src: string;
@@ -31,199 +35,161 @@ interface FlavorProduct {
 const flavorsData: FlavorProduct[] = [
   {
     id: "rose-milkaboo",
-    name: "Rose Milkaboo",
-    flavor: "rose flavour",
-    tagline: "Floral, Creamy & Enchanting",
+    name: "ROSE MILKABOO",
+    flavor: "Sweet & Floral",
+    tagline: "Heart-stealing, taste-bud-thrilling sweets you won't forget!",
     description:
       "A delicate fusion of fragrant damask rose extracts, rich velvet milk tea, and chewy dark tapioca pearls topped with edible rose petals.",
     price: "$6.50",
     rating: 4.9,
     reviewsCount: 142,
     image: "/images/rosemilk.png",
+    cardBg: "bg-[#f5ceda]",
+    cardPattern: "/images/backgroun 1.png",
     accentColor: "from-rose-400 to-pink-500",
-    badgeBg: "bg-pink-100 border-pink-200",
+    badgeBg: "bg-pink-100/90 border-pink-200 text-pink-700",
     badgeText: "text-pink-700",
+    btnBg: "bg-[#d8f96e] hover:bg-[#c9ef56] text-neutral-950",
+    btnText: "text-neutral-950",
     notes: ["Real Rose Petals", "Velvet Milk Base", "Fresh Tapioca"],
     floatElements: [
       {
         src: "/images/rosemilka1.png",
         alt: "Rose Flower",
-        posClass: "top-0 left-0 -translate-x-2 -translate-y-2",
-        hoverPosClass: "group-hover/card:-translate-x-8 group-hover/card:-translate-y-8 group-hover/card:-rotate-12",
-        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
+        posClass: "-top-6 -left-6",
+        hoverPosClass: "group-hover:-translate-x-4 group-hover:-translate-y-4 group-hover:-rotate-12",
+        sizeClass: "w-20 h-20 sm:w-24 sm:h-24",
         animation: "animate-float-gentle",
       },
       {
         src: "/images/rosemilka2.png",
         alt: "Pink Ice Cubes",
-        posClass: "top-0 right-0 translate-x-2 -translate-y-2",
-        hoverPosClass: "group-hover/card:translate-x-8 group-hover/card:-translate-y-8 group-hover/card:rotate-12",
-        sizeClass: "w-14 h-14 sm:w-18 sm:h-18",
+        posClass: "-top-4 -right-4",
+        hoverPosClass: "group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-12",
+        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
         animation: "animate-float-reverse",
       },
       {
         src: "/images/boba1.png",
         alt: "Boba Pearls",
-        posClass: "bottom-12 left-0 -translate-x-2 translate-y-2",
-        hoverPosClass: "group-hover/card:-translate-x-8 group-hover/card:translate-y-6 group-hover/card:-rotate-6",
-        sizeClass: "w-14 h-14 sm:w-18 sm:h-18",
+        posClass: "bottom-4 -left-6",
+        hoverPosClass: "group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-6",
+        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
         animation: "animate-float-gentle",
       },
       {
-        src: "/images/boba2.png",
-        alt: "Glossy Boba Pearl",
-        posClass: "bottom-12 right-0 translate-x-2 translate-y-2",
-        hoverPosClass: "group-hover/card:translate-x-8 group-hover/card:translate-y-6 group-hover/card:rotate-12",
-        sizeClass: "w-12 h-12 sm:w-16 sm:h-16",
+        src: "/images/rosemilka4.png",
+        alt: "Rose Bubble",
+        posClass: "bottom-4 -right-6",
+        hoverPosClass: "group-hover:translate-x-4 group-hover:translate-y-3 group-hover:rotate-12",
+        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
         animation: "animate-float-reverse",
       },
     ],
   },
   {
     id: "apple-milkaboo",
-    name: "Apple Milkaboo",
-    flavor: "apple flavour",
-    tagline: "Crisp, Tangy & Refreshing",
+    name: "TANGY TANGO APPLE",
+    flavor: "Crisp & Zesty",
+    tagline: "A tangy adventure with the sweetest epilogue!",
     description:
       "Infused with crisp orchard green apple essence, silky milk blend, and golden popping boba for a bright, fruity burst in every sip.",
     price: "$6.25",
     rating: 4.8,
     reviewsCount: 118,
     image: "/images/greenapple.png",
+    cardBg: "bg-[#d0f098]",
+    cardPattern: "/images/Green apple.png",
     accentColor: "from-emerald-400 to-green-500",
-    badgeBg: "bg-emerald-100 border-emerald-200",
+    badgeBg: "bg-lime-100/90 border-lime-200 text-lime-800",
     badgeText: "text-emerald-800",
+    btnBg: "bg-[#d8f96e] hover:bg-[#c9ef56] text-neutral-950",
+    btnText: "text-neutral-950",
     notes: ["Granny Smith Twist", "Sweet & Crisp", "Popping Boba"],
     floatElements: [
       {
         src: "/images/applemilka1.png",
         alt: "Apple Slices",
-        posClass: "top-0 left-0 -translate-x-2 -translate-y-2",
-        hoverPosClass: "group-hover/card:-translate-x-10 group-hover/card:-translate-y-10 group-hover/card:-rotate-12",
-        sizeClass: "w-20 h-20 sm:w-24 sm:h-24",
+        posClass: "-top-8 -left-8",
+        hoverPosClass: "group-hover:-translate-x-4 group-hover:-translate-y-4 group-hover:-rotate-12",
+        sizeClass: "w-24 h-24 sm:w-28 sm:h-28",
         animation: "animate-float-gentle",
       },
       {
         src: "/images/applemilka2.png",
         alt: "Whole Green Apple",
-        posClass: "top-0 right-0 translate-x-2 -translate-y-2",
-        hoverPosClass: "group-hover/card:translate-x-10 group-hover/card:-translate-y-10 group-hover/card:rotate-12",
-        sizeClass: "w-18 h-18 sm:w-22 sm:h-22",
+        posClass: "-top-6 -right-6",
+        hoverPosClass: "group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-12",
+        sizeClass: "w-20 h-20 sm:w-24 sm:h-24",
         animation: "animate-float-reverse",
       },
       {
         src: "/images/boba1.png",
         alt: "Black Boba Pearls",
-        posClass: "bottom-12 left-0 -translate-x-2 translate-y-2",
-        hoverPosClass: "group-hover/card:-translate-x-8 group-hover/card:translate-y-6 group-hover/card:-rotate-6",
-        sizeClass: "w-14 h-14 sm:w-18 sm:h-18",
+        posClass: "bottom-4 -left-6",
+        hoverPosClass: "group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-6",
+        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
         animation: "animate-float-gentle",
       },
       {
         src: "/images/boba2.png",
         alt: "Single Boba Pearl",
-        posClass: "bottom-12 right-0 translate-x-2 translate-y-2",
-        hoverPosClass: "group-hover/card:translate-x-8 group-hover/card:translate-y-6 group-hover/card:rotate-12",
-        sizeClass: "w-12 h-12 sm:w-16 sm:h-16",
+        posClass: "bottom-4 -right-4",
+        hoverPosClass: "group-hover:translate-x-4 group-hover:translate-y-3 group-hover:rotate-12",
+        sizeClass: "w-14 h-14 sm:w-18 sm:h-18",
         animation: "animate-float-reverse",
       },
     ],
   },
   {
     id: "blackcurrant-milkaboo",
-    name: "Blackcurrant Milkaboo",
-    flavor: "blackcurrant flav",
-    tagline: "Bold, Berry-Rich & Vibrant",
+    name: "BLACKCURRANT BLISS",
+    flavor: "Rich & Tart Berry",
+    tagline: "Wild berry sensation layered with pure velvet euphoria!",
     description:
       "Deep purple blackcurrant berry reduction layered over creamy milk tea with honey-soaked boba pearls for a rich sweet-tart experience.",
     price: "$6.75",
     rating: 4.9,
     reviewsCount: 156,
     image: "/images/blackcc.png",
+    cardBg: "bg-[#e2cbf8]",
+    cardPattern: "/images/blackbackgroiund.png",
     accentColor: "from-purple-500 to-indigo-600",
-    badgeBg: "bg-purple-100 border-purple-200",
+    badgeBg: "bg-purple-100/90 border-purple-200 text-purple-800",
     badgeText: "text-purple-800",
+    btnBg: "bg-[#d8f96e] hover:bg-[#c9ef56] text-neutral-950",
+    btnText: "text-neutral-950",
     notes: ["Wild Blackcurrant", "Berry Cream Foam", "Honey Boba"],
     floatElements: [
       {
         src: "/images/blackcurrentmilka2.png",
         alt: "Blackcurrant Cluster",
-        posClass: "top-0 left-0 -translate-x-2 -translate-y-2",
-        hoverPosClass: "group-hover/card:-translate-x-10 group-hover/card:-translate-y-10 group-hover/card:-rotate-12",
-        sizeClass: "w-20 h-20 sm:w-24 sm:h-24",
+        posClass: "-top-8 -left-8",
+        hoverPosClass: "group-hover:-translate-x-4 group-hover:-translate-y-4 group-hover:-rotate-12",
+        sizeClass: "w-24 h-24 sm:w-28 sm:h-28",
         animation: "animate-float-gentle",
       },
       {
         src: "/images/blackcurrentmilka7.png",
         alt: "Single Blackcurrant",
-        posClass: "top-0 right-0 translate-x-2 -translate-y-2",
-        hoverPosClass: "group-hover/card:translate-x-10 group-hover/card:-translate-y-10 group-hover/card:rotate-12",
-        sizeClass: "w-14 h-14 sm:w-18 sm:h-18",
+        posClass: "-top-6 -right-6",
+        hoverPosClass: "group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-12",
+        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
         animation: "animate-float-reverse",
       },
       {
         src: "/images/blackcurrentmilka1.png",
         alt: "Boba Pearls Cluster",
-        posClass: "bottom-12 left-0 -translate-x-2 translate-y-2",
-        hoverPosClass: "group-hover/card:-translate-x-8 group-hover/card:translate-y-6 group-hover/card:-rotate-6",
-        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
+        posClass: "bottom-4 -left-6",
+        hoverPosClass: "group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-6",
+        sizeClass: "w-18 h-18 sm:w-22 sm:h-22",
         animation: "animate-float-gentle",
       },
       {
         src: "/images/boba1.png",
         alt: "Tapioca Boba",
-        posClass: "bottom-12 right-0 translate-x-2 translate-y-2",
-        hoverPosClass: "group-hover/card:translate-x-8 group-hover/card:translate-y-6 group-hover/card:rotate-12",
-        sizeClass: "w-14 h-14 sm:w-18 sm:h-18",
-        animation: "animate-float-reverse",
-      },
-    ],
-  },
-  {
-    id: "custard-milkaboo",
-    name: "Custard Milkaboo",
-    flavor: "custard flav",
-    tagline: "Golden, Silky & Indulgent",
-    description:
-      "Slow-cooked vanilla egg custard blended into warm caramelized milk tea with brown sugar boba pearls and creme brulee topping.",
-    price: "$6.95",
-    rating: 5.0,
-    reviewsCount: 189,
-    image: "/images/custard-milkaboo.jpg",
-    accentColor: "from-amber-400 to-orange-500",
-    badgeBg: "bg-amber-100 border-amber-200",
-    badgeText: "text-amber-800",
-    notes: ["Creme Brulee Top", "Real Vanilla Custard", "Brown Sugar Pearls"],
-    floatElements: [
-      {
-        src: "/images/boba1.png",
-        alt: "Brown Sugar Boba",
-        posClass: "top-0 left-0 -translate-x-2 -translate-y-2",
-        hoverPosClass: "group-hover/card:-translate-x-8 group-hover/card:-translate-y-8 group-hover/card:-rotate-12",
-        sizeClass: "w-16 h-16 sm:w-20 sm:h-20",
-        animation: "animate-float-gentle",
-      },
-      {
-        src: "/images/boba2.png",
-        alt: "Glossy Boba",
-        posClass: "top-0 right-0 translate-x-2 -translate-y-2",
-        hoverPosClass: "group-hover/card:translate-x-8 group-hover/card:-translate-y-8 group-hover/card:rotate-12",
-        sizeClass: "w-14 h-14 sm:w-18 sm:h-18",
-        animation: "animate-float-reverse",
-      },
-      {
-        src: "/images/boba3.png",
-        alt: "Tapioca Pearl",
-        posClass: "bottom-12 left-0 -translate-x-2 translate-y-2",
-        hoverPosClass: "group-hover/card:-translate-x-8 group-hover/card:translate-y-6 group-hover/card:-rotate-6",
-        sizeClass: "w-12 h-12 sm:w-14 sm:h-14",
-        animation: "animate-float-gentle",
-      },
-      {
-        src: "/images/boba1.png",
-        alt: "Caramel Boba",
-        posClass: "bottom-12 right-0 translate-x-2 translate-y-2",
-        hoverPosClass: "group-hover/card:translate-x-8 group-hover/card:translate-y-6 group-hover/card:rotate-12",
+        posClass: "bottom-4 -right-4",
+        hoverPosClass: "group-hover:translate-x-4 group-hover:translate-y-3 group-hover:rotate-12",
         sizeClass: "w-14 h-14 sm:w-18 sm:h-18",
         animation: "animate-float-reverse",
       },
@@ -234,7 +200,10 @@ const flavorsData: FlavorProduct[] = [
 export default function FlavorSection() {
   const [favorites, setFavorites] = useState<Record<string, boolean>>({});
   const [addedId, setAddedId] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<"rose" | "apple" | "blackcurrant">("rose");
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const toggleFavorite = (id: string) => {
     setFavorites((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -245,329 +214,200 @@ export default function FlavorSection() {
     setTimeout(() => setAddedId(null), 1800);
   };
 
+  // Parallax horizontal pinning scroll calculation
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const totalDist = containerRef.current.offsetHeight - window.innerHeight;
+
+      if (totalDist <= 0) return;
+
+      // Distance from when the top of container hits top of viewport
+      const current = -rect.top;
+      const progress = Math.min(Math.max(current / totalDist, 0), 1);
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Compute horizontal translate percentage
+  // Total cards = 3. On large desktop we translate ~38-42% to reveal the 3rd card completely.
+  const translateX = scrollProgress * 38;
+
   return (
-    <section id="flavors" className="w-full bg-[#f3edf7] py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto">
-        {/* Top Header Section matching user reference photo layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-12">
+    <div
+      ref={containerRef}
+      id="flavors"
+      className="relative w-full h-[280vh] bg-[#ede6f6]"
+    >
+      {/* Sticky viewport container (stays pinned while user scrolls through the 300vh height) */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center px-4 sm:px-8 lg:px-16">
+        {/* Top Header Section matching the exact screenshot */}
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-start mb-6 lg:mb-10 shrink-0">
           <div>
-            <span className="inline-block px-3 py-1 mb-4 rounded-full text-xs font-bold uppercase tracking-widest bg-purple-200 text-purple-900">
-              Our Signature Selection
-            </span>
-            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-[family-name:var(--font-luckiest-guy)] tracking-tight text-neutral-950 uppercase leading-[0.95]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 mb-3 rounded-full text-xs font-bold uppercase tracking-widest bg-purple-200/80 text-purple-900">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Signature Flavors</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[family-name:var(--font-luckiest-guy)] tracking-tight text-neutral-950 uppercase leading-[0.95] select-none">
               4 Flavor Mixes <br />
               Beloved Across <br />
               The Land
             </h2>
           </div>
 
-          <div className="pt-2 lg:pt-8">
-            <p className="text-base sm:text-lg text-neutral-700 leading-relaxed font-medium">
-              The most celebrated bubble tea creations in the realm. Every cup is a little spell: color, texture, and taste woven into a moment of pure wonder. At Milkaboo, we embrace artisanal flavor crafting & elevate bubble tea into something truly enchanting.
+          <div className="pt-1 lg:pt-6 flex flex-col justify-between">
+            <p className="text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed font-medium">
+              The most celebrated bubble tea creations in the realm. Every cup is a little spell: color, texture, and taste woven into a moment of pure wonder. At Milkaboo, we elevate bubble tea into something truly enchanting.
             </p>
+
+            {/* Scroll Indicator Bar */}
+            <div className="mt-4 flex items-center gap-3">
+              <span className="text-xs font-bold text-neutral-500 uppercase tracking-wider">
+                Scroll to explore ({Math.round(scrollProgress * 100)}%)
+              </span>
+              <div className="h-1.5 w-32 bg-purple-200 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-neutral-900 rounded-full transition-all duration-150 ease-out"
+                  style={{ width: `${Math.max(scrollProgress * 100, 10)}%` }}
+                />
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Tab Switcher for Featured Interactive Showcases */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-          <button
-            onClick={() => setActiveTab("rose")}
-            className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 cursor-pointer shadow-xs ${activeTab === "rose"
-                ? "bg-pink-600 text-white shadow-md scale-105"
-                : "bg-white text-neutral-700 hover:bg-pink-50"
-              }`}
+        {/* Horizontal Track Pinning 3 Products */}
+        <div className="relative w-full overflow-visible">
+          <div
+            ref={trackRef}
+            className="flex items-center gap-8 sm:gap-10 lg:gap-12 transition-transform duration-100 ease-out will-change-transform"
+            style={{
+              transform: `translate3d(-${translateX}%, 0, 0)`,
+            }}
           >
-            🌸 Rose Milkaboo Spotlight
-          </button>
+            {flavorsData.map((item, index) => {
+              const isFav = favorites[item.id];
+              const isAdded = addedId === item.id;
 
-          <button
-            onClick={() => setActiveTab("apple")}
-            className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 cursor-pointer shadow-xs ${activeTab === "apple"
-                ? "bg-emerald-600 text-white shadow-md scale-105"
-                : "bg-white text-neutral-700 hover:bg-emerald-50"
-              }`}
-          >
-            🍏 Green Apple Milkaboo Spotlight
-          </button>
+              return (
+                <div
+                  key={item.id}
+                  className="group relative flex-none w-[320px] sm:w-[420px] md:w-[480px] lg:w-[520px] select-none cursor-pointer"
+                >
+                  {/* Outer Rounded Product Card Backdrop matching screenshot */}
+                  <div className="relative w-full aspect-[4/3] rounded-[32px] sm:rounded-[40px] overflow-hidden flex items-center justify-center shadow-lg transition-all duration-500 group-hover:shadow-2xl">
+                    {/* Rounded Colored Card Background */}
+                    <div className={`absolute inset-0 ${item.cardBg}`} />
 
-          <button
-            onClick={() => setActiveTab("blackcurrant")}
-            className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 cursor-pointer shadow-xs ${activeTab === "blackcurrant"
-                ? "bg-purple-700 text-white shadow-md scale-105"
-                : "bg-white text-neutral-700 hover:bg-purple-50"
-              }`}
-          >
-            🍇 Blackcurrant Milkaboo Spotlight
-          </button>
-        </div>
+                    {/* Subtle Backdrop Pattern */}
+                    {item.cardPattern && (
+                      <div
+                        className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay transition-transform duration-700 group-hover:scale-110"
+                        style={{ backgroundImage: `url('${item.cardPattern}')` }}
+                      />
+                    )}
 
-        {/* Featured Interactive Showcase Container */}
-        <div className="mb-16">
-          {activeTab === "rose" ? (
-            /* Rose Milkaboo Spotlight Container */
-            <div className="relative group w-full h-[420px] sm:h-[480px] lg:h-[520px] rounded-3xl overflow-hidden shadow-xl flex items-center justify-center cursor-pointer border border-pink-200/80 transition-all duration-500">
-              {/* 1. Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: `url('/images/backgroun 1.png')` }}
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-pink-950/40 via-transparent to-pink-950/10 opacity-70 group-hover:opacity-40 transition-opacity duration-500" />
-
-              {/* 2. Four Floating Images Pop Out from BEHIND the hand on Hover */}
-              <div className="absolute z-10 w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 transition-all duration-700 ease-out transform scale-50 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:-translate-x-32 sm:group-hover:-translate-x-48 lg:group-hover:-translate-x-64 group-hover:-translate-y-24 sm:group-hover:-translate-y-36 group-hover:-rotate-12 pointer-events-none drop-shadow-2xl animate-float-gentle">
-                <Image src="/images/rosemilka1.png" alt="Rose Flower" fill className="object-contain" />
-              </div>
-
-              <div className="absolute z-10 w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 transition-all duration-700 ease-out transform scale-50 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-32 sm:group-hover:translate-x-48 lg:group-hover:translate-x-64 group-hover:-translate-y-24 sm:group-hover:-translate-y-36 group-hover:rotate-12 pointer-events-none drop-shadow-2xl animate-float-reverse">
-                <Image src="/images/rosemilka2.png" alt="Pink Ice Cubes" fill className="object-contain" />
-              </div>
-
-              <div className="absolute z-10 w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 transition-all duration-700 ease-out transform scale-50 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:-translate-x-32 sm:group-hover:-translate-x-48 lg:group-hover:-translate-x-64 group-hover:translate-y-20 sm:group-hover:translate-y-28 group-hover:-rotate-6 pointer-events-none drop-shadow-2xl animate-float-gentle">
-                <Image src="/images/boba1.png" alt="Black Boba Pearls" fill className="object-contain" />
-              </div>
-
-              <div className="absolute z-10 w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 transition-all duration-700 ease-out transform scale-50 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-32 sm:group-hover:translate-x-48 lg:group-hover:translate-x-64 group-hover:translate-y-20 sm:group-hover:translate-y-28 group-hover:rotate-12 pointer-events-none drop-shadow-2xl animate-float-reverse">
-                <Image src="/images/rosemilka4.png" alt="Rose Bubbles" fill className="object-contain" />
-              </div>
-
-              {/* Center Hand holding Rose Milkaboo Cup */}
-              <div className="relative z-20 w-56 h-80 sm:w-72 sm:h-[380px] lg:w-80 lg:h-[420px] transition-transform duration-500 ease-out transform group-hover:scale-110 group-hover:-translate-y-2 drop-shadow-[0_20px_35px_rgba(0,0,0,0.3)]">
-                <Image src="/images/rosemilk.png" alt="Rose Milkaboo Hand" fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain" priority />
-              </div>
-
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 bg-white/80 backdrop-blur-md px-5 py-2 rounded-full border border-pink-200 shadow-md text-xs sm:text-sm font-bold text-pink-950 flex items-center gap-2 transition-all duration-300 group-hover:bg-white group-hover:scale-105">
-                <Sparkles className="w-4 h-4 text-pink-600 animate-pulse" />
-                <span>Hover over to reveal Rose Milkaboo ingredients & boba!</span>
-              </div>
-            </div>
-          ) : activeTab === "apple" ? (
-            /* Green Apple Milkaboo Spotlight Container */
-            <div className="relative group w-full h-[420px] sm:h-[480px] lg:h-[520px] rounded-3xl overflow-hidden shadow-xl flex items-center justify-center cursor-pointer border border-emerald-200/80 transition-all duration-500">
-              {/* Green Apple Background */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: `url('/images/Green apple.png')` }}
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/40 via-transparent to-emerald-950/10 opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
-
-              {/* Floating Green Apple & Boba Elements popping out from BEHIND */}
-              <div className="absolute z-10 w-32 h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 transition-all duration-700 ease-out transform scale-50 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:-translate-x-36 sm:group-hover:-translate-x-52 lg:group-hover:-translate-x-72 group-hover:-translate-y-24 sm:group-hover:-translate-y-36 group-hover:-rotate-12 pointer-events-none drop-shadow-2xl animate-float-gentle">
-                <Image src="/images/applemilka1.png" alt="Green Apple Slices & Drops" fill sizes="200px" className="object-contain" />
-              </div>
-
-              <div className="absolute z-10 w-32 h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 transition-all duration-700 ease-out transform scale-50 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-36 sm:group-hover:translate-x-52 lg:group-hover:translate-x-72 group-hover:-translate-y-24 sm:group-hover:-translate-y-36 group-hover:rotate-12 pointer-events-none drop-shadow-2xl animate-float-reverse">
-                <Image src="/images/applemilka2.png" alt="Whole Green Apple" fill sizes="200px" className="object-contain" />
-              </div>
-
-              <div className="absolute z-10 w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 transition-all duration-700 ease-out transform scale-50 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:-translate-x-32 sm:group-hover:-translate-x-48 lg:group-hover:-translate-x-64 group-hover:translate-y-20 sm:group-hover:translate-y-28 group-hover:-rotate-6 pointer-events-none drop-shadow-2xl animate-float-gentle">
-                <Image src="/images/boba1.png" alt="Glossy Boba Cluster" fill sizes="180px" className="object-contain" />
-              </div>
-
-              <div className="absolute z-10 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 transition-all duration-700 ease-out transform scale-50 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-32 sm:group-hover:translate-x-48 lg:group-hover:translate-x-64 group-hover:translate-y-20 sm:group-hover:translate-y-28 group-hover:rotate-12 pointer-events-none drop-shadow-2xl animate-float-reverse">
-                <Image src="/images/boba2.png" alt="Single Boba Pearl" fill sizes="160px" className="object-contain" />
-              </div>
-
-              {/* Center Green Apple Drink Image */}
-              <div className="relative z-20 w-60 h-80 sm:w-80 sm:h-[380px] lg:w-96 lg:h-[430px] transition-transform duration-500 ease-out transform group-hover:scale-110 group-hover:-translate-y-2 drop-shadow-[0_20px_35px_rgba(0,0,0,0.35)]">
-                <Image src="/images/greenapple.png" alt="Green Apple Milkaboo" fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain" priority />
-              </div>
-
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 bg-white/80 backdrop-blur-md px-5 py-2 rounded-full border border-emerald-200 shadow-md text-xs sm:text-sm font-bold text-emerald-950 flex items-center gap-2 transition-all duration-300 group-hover:bg-white group-hover:scale-105">
-                <Sparkles className="w-4 h-4 text-emerald-600 animate-pulse" />
-                <span>Hover over to reveal Green Apple slices & boba!</span>
-              </div>
-            </div>
-          ) : (
-            /* Blackcurrant Milkaboo Spotlight Container */
-            <div className="relative group w-full h-[420px] sm:h-[480px] lg:h-[520px] rounded-3xl overflow-hidden shadow-xl flex items-center justify-center cursor-pointer border border-purple-200/80 transition-all duration-500">
-              {/* Blackcurrant Background */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: `url('/images/blackbackgroiund.png')` }}
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-950/40 via-transparent to-purple-950/10 opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
-
-              {/* Floating Blackcurrant & Boba Elements popping out from BEHIND */}
-              <div className="absolute z-10 w-32 h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 transition-all duration-700 ease-out transform scale-50 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:-translate-x-36 sm:group-hover:-translate-x-52 lg:group-hover:-translate-x-72 group-hover:-translate-y-24 sm:group-hover:-translate-y-36 group-hover:-rotate-12 pointer-events-none drop-shadow-2xl animate-float-gentle">
-                <Image src="/images/blackcurrentmilka2.png" alt="Blackcurrant Cluster" fill sizes="200px" className="object-contain" />
-              </div>
-
-              <div className="absolute z-10 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 transition-all duration-700 ease-out transform scale-50 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-36 sm:group-hover:translate-x-52 lg:group-hover:translate-x-72 group-hover:-translate-y-24 sm:group-hover:-translate-y-36 group-hover:rotate-12 pointer-events-none drop-shadow-2xl animate-float-reverse">
-                <Image src="/images/blackcurrentmilka7.png" alt="Single Blackcurrant" fill sizes="160px" className="object-contain" />
-              </div>
-
-              <div className="absolute z-10 w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 transition-all duration-700 ease-out transform scale-50 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:-translate-x-32 sm:group-hover:-translate-x-48 lg:group-hover:-translate-x-64 group-hover:translate-y-20 sm:group-hover:translate-y-28 group-hover:-rotate-6 pointer-events-none drop-shadow-2xl animate-float-gentle">
-                <Image src="/images/blackcurrentmilka1.png" alt="Boba Cluster" fill sizes="180px" className="object-contain" />
-              </div>
-
-              <div className="absolute z-10 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 transition-all duration-700 ease-out transform scale-50 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-32 sm:group-hover:translate-x-48 lg:group-hover:translate-x-64 group-hover:translate-y-20 sm:group-hover:translate-y-28 group-hover:rotate-12 pointer-events-none drop-shadow-2xl animate-float-reverse">
-                <Image src="/images/boba1.png" alt="Tapioca Pearl" fill sizes="160px" className="object-contain" />
-              </div>
-
-              {/* Center Blackcurrant Drink Image */}
-              <div className="relative z-20 w-56 h-80 sm:w-72 sm:h-[380px] lg:w-80 lg:h-[420px] transition-transform duration-500 ease-out transform group-hover:scale-110 group-hover:-translate-y-2 drop-shadow-[0_20px_35px_rgba(0,0,0,0.35)]">
-                <Image src="/images/blackcc.png" alt="Blackcurrant Milkaboo" fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain" priority />
-              </div>
-
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 bg-white/80 backdrop-blur-md px-5 py-2 rounded-full border border-purple-200 shadow-md text-xs sm:text-sm font-bold text-purple-950 flex items-center gap-2 transition-all duration-300 group-hover:bg-white group-hover:scale-105">
-                <Sparkles className="w-4 h-4 text-purple-600 animate-pulse" />
-                <span>Hover over to reveal Blackcurrant berries & boba!</span>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* 4 Bubble Tea Products Grid with Floating Boba & Flavor Pop-Outs on Hover */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {flavorsData.map((item) => {
-            const isFav = favorites[item.id];
-            const isAdded = addedId === item.id;
-            const isRose = item.id === "rose-milkaboo";
-            const isApple = item.id === "apple-milkaboo";
-            const isBlackcurrant = item.id === "blackcurrant-milkaboo";
-
-            return (
-              <div
-                key={item.id}
-                className="group/card relative bg-white rounded-3xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between border border-purple-100/60 hover:-translate-y-1"
-              >
-                {/* Floating Boba & Ingredients Bursting Out on Hover */}
-                {item.floatElements.map((elem, idx) => (
-                  <div
-                    key={idx}
-                    className={`absolute z-30 ${elem.sizeClass} ${elem.posClass} ${elem.hoverPosClass} opacity-0 group-hover/card:opacity-100 transition-all duration-500 ease-out pointer-events-none drop-shadow-lg ${elem.animation}`}
-                  >
-                    <Image src={elem.src} alt={elem.alt} fill sizes="100px" className="object-contain" />
-                  </div>
-                ))}
-
-                {/* Product Top Image Container */}
-                <div>
-                  <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-neutral-100 mb-5">
-                    {isRose ? (
-                      /* Mini Interactive Showcase for Rose Milkaboo Card */
-                      <div className="relative w-full h-full bg-cover bg-center overflow-hidden flex items-center justify-center" style={{ backgroundImage: `url('/images/backgroun 1.png')` }}>
-                        <div className="relative z-20 w-36 h-48 transition-transform duration-500 group-hover/card:scale-110">
-                          <Image src="/images/rosemilk.png" alt="Hand holding Rose Milkaboo" fill sizes="(max-width: 768px) 100vw, 25vw" className="object-contain" />
-                        </div>
+                    {/* Floating Boba & Fruit Toppings (Pop out on hover with parallax depth) */}
+                    {item.floatElements.map((elem, idx) => (
+                      <div
+                        key={idx}
+                        className={`absolute z-20 ${elem.sizeClass} ${elem.posClass} ${elem.hoverPosClass} transition-all duration-500 ease-out pointer-events-none drop-shadow-xl ${elem.animation}`}
+                      >
+                        <Image
+                          src={elem.src}
+                          alt={elem.alt}
+                          fill
+                          sizes="120px"
+                          className="object-contain"
+                        />
                       </div>
-                    ) : isApple ? (
-                      /* Mini Interactive Showcase for Green Apple Card */
-                      <div className="relative w-full h-full bg-cover bg-center overflow-hidden flex items-center justify-center" style={{ backgroundImage: `url('/images/Green apple.png')` }}>
-                        <div className="relative z-20 w-44 h-48 transition-transform duration-500 group-hover/card:scale-110">
-                          <Image src="/images/greenapple.png" alt="Green Apple Milkaboo" fill sizes="(max-width: 768px) 100vw, 25vw" className="object-contain" />
-                        </div>
-                      </div>
-                    ) : isBlackcurrant ? (
-                      /* Mini Interactive Showcase for Blackcurrant Card */
-                      <div className="relative w-full h-full bg-cover bg-center overflow-hidden flex items-center justify-center" style={{ backgroundImage: `url('/images/blackbackgroiund.png')` }}>
-                        <div className="relative z-20 w-36 h-48 transition-transform duration-500 group-hover/card:scale-110">
-                          <Image src="/images/blackcc.png" alt="Blackcurrant Milkaboo" fill sizes="(max-width: 768px) 100vw, 25vw" className="object-contain" />
-                        </div>
-                      </div>
-                    ) : (
+                    ))}
+
+                    {/* Main Featured Drink Cup Standing in the center */}
+                    <div className="relative z-10 w-44 h-64 sm:w-56 sm:h-80 md:w-64 md:h-88 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-2 drop-shadow-[0_20px_35px_rgba(0,0,0,0.25)]">
                       <Image
                         src={item.image}
                         alt={item.name}
                         fill
-                        className="object-cover group-hover/card:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 300px, 400px"
+                        className="object-contain"
+                        priority={index === 0}
                       />
-                    )}
-
-                    {/* Flavor Tag Badge */}
-                    <div className="absolute top-3 left-3 z-20">
-                      <span
-                        className={`inline-block px-3 py-1 rounded-full text-xs font-bold capitalize border shadow-xs backdrop-blur-md ${item.badgeBg} ${item.badgeText}`}
-                      >
-                        {item.flavor}
-                      </span>
                     </div>
 
-                    {/* Favorite Button */}
+                    {/* Favorite Heart Button */}
                     <button
-                      onClick={() => toggleFavorite(item.id)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleFavorite(item.id);
+                      }}
                       aria-label="Add to favorites"
-                      className="absolute top-3 right-3 z-20 p-2.5 rounded-full bg-white/80 backdrop-blur-md text-neutral-600 hover:text-rose-500 hover:bg-white shadow-xs transition-colors cursor-pointer"
+                      className="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-white/85 backdrop-blur-md text-neutral-600 hover:text-rose-500 hover:bg-white shadow-sm transition-transform active:scale-125 cursor-pointer"
                     >
                       <Heart
-                        className={`w-4 h-4 transition-transform active:scale-125 ${isFav ? "fill-rose-500 text-rose-500" : ""
-                          }`}
+                        className={`w-4 h-4 ${
+                          isFav ? "fill-rose-500 text-rose-500" : ""
+                        }`}
                       />
                     </button>
-
-                    {/* Gradient Overlay Accent */}
-                    <div
-                      className={`absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t ${item.accentColor} opacity-0 group-hover/card:opacity-20 transition-opacity duration-300`}
-                    />
                   </div>
 
-                  {/* Title & Rating */}
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <h3 className="text-2xl sm:text-3xl font-[family-name:var(--font-luckiest-guy)] text-neutral-900 leading-tight tracking-wide">
-                      {item.name}
-                    </h3>
-                    <div className="flex items-center gap-1 bg-amber-50 px-2 py-0.5 rounded-lg border border-amber-200/50 shrink-0">
-                      <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                      <span className="text-xs font-bold text-amber-900">{item.rating}</span>
+                  {/* Card Bottom Meta: Exact same typography and pill button as screenshot */}
+                  <div className="mt-5 flex flex-col items-start">
+                    <div className="flex items-center justify-between w-full">
+                      <h3 className="text-2xl sm:text-3xl font-[family-name:var(--font-luckiest-guy)] text-neutral-950 uppercase tracking-tight leading-tight">
+                        {item.name}
+                      </h3>
+                      <div className="flex items-center gap-1 bg-white/80 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-neutral-200">
+                        <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                        <span className="text-xs font-bold text-neutral-800">
+                          {item.rating}
+                        </span>
+                      </div>
+                    </div>
+
+                    <p className="mt-1.5 text-xs sm:text-sm text-neutral-700 font-medium line-clamp-2 max-w-md leading-snug">
+                      {item.tagline}
+                    </p>
+
+                    {/* SHOP NOW / ORDER NOW Pill Button matching the screenshot (Lime neon pill) */}
+                    <div className="mt-4">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleAddToCart(item.id);
+                        }}
+                        className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider shadow-sm active:scale-95 transition-all duration-200 cursor-pointer ${
+                          isAdded
+                            ? "bg-emerald-600 text-white"
+                            : `${item.btnBg} hover:shadow-md`
+                        }`}
+                      >
+                        {isAdded ? (
+                          <>
+                            <Check className="w-4 h-4" />
+                            <span>ADDED!</span>
+                          </>
+                        ) : (
+                          <>
+                            <ShoppingBag className="w-3.5 h-3.5" />
+                            <span>SHOP NOW</span>
+                          </>
+                        )}
+                      </button>
                     </div>
                   </div>
-
-                  {/* Tagline & Description */}
-                  <p className="text-xs font-semibold text-purple-700 mb-2">
-                    {item.tagline}
-                  </p>
-                  <p className="text-xs text-neutral-600 leading-relaxed line-clamp-3 mb-4">
-                    {item.description}
-                  </p>
-
-                  {/* Flavor Notes Pills */}
-                  <div className="flex flex-wrap gap-1.5 mb-5">
-                    {item.notes.map((note, idx) => (
-                      <span
-                        key={idx}
-                        className="text-[10px] font-semibold bg-neutral-100 text-neutral-700 px-2 py-0.5 rounded-md"
-                      >
-                        {note}
-                      </span>
-                    ))}
-                  </div>
                 </div>
-
-                {/* Card Footer: Price & Order Action */}
-                <div className="pt-3 border-t border-neutral-100 flex items-center justify-between mt-auto">
-                  <div>
-                    <span className="text-xs text-neutral-400 font-medium block">Price</span>
-                    <span className="text-lg font-black text-neutral-900">{item.price}</span>
-                  </div>
-
-                  <button
-                    onClick={() => handleAddToCart(item.id)}
-                    className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all duration-200 cursor-pointer shadow-xs active:scale-95 ${isAdded
-                        ? "bg-emerald-600 text-white"
-                        : "bg-neutral-900 hover:bg-neutral-800 text-white hover:shadow-md"
-                      }`}
-                  >
-                    {isAdded ? (
-                      <>
-                        <Check className="w-4 h-4" />
-                        <span>Added!</span>
-                      </>
-                    ) : (
-                      <>
-                        <ShoppingBag className="w-4 h-4" />
-                        <span>Order Now</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
