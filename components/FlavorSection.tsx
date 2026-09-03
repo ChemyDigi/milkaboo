@@ -272,10 +272,10 @@ export default function FlavorSection() {
   }, []);
 
   return (
-    <div id="flavors" className="relative w-full bg-[#dfd2f5]">
-      {/* 1. TOP HEADER WORDING SECTION */}
-      <div className="w-full max-w-7xl mx-auto pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-14 px-6 sm:px-12 lg:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-start">
+    <div id="flavors" className="relative w-full bg-[#ede6f6]">
+      {/* 1. TOP HEADER WORDING SECTION - Full Width Edge to Edge */}
+      <div className="w-full pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-14 px-6 sm:px-12 md:px-16 lg:px-20 xl:px-24">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-start">
           <div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[family-name:var(--font-luckiest-guy)] tracking-tight text-neutral-950 uppercase leading-[0.95] select-none">
               4 Flavor Mixes <br />
@@ -285,21 +285,21 @@ export default function FlavorSection() {
           </div>
 
           <div className="flex flex-col justify-start lg:pt-3">
-            <p className="text-base sm:text-lg md:text-xl text-neutral-700 leading-relaxed font-medium max-w-xl">
+            <p className="text-base sm:text-lg md:text-xl text-neutral-700 leading-relaxed font-medium max-w-2xl">
               The most celebrated bubble tea creations in the realm. Every cup is a little spell: color, texture, and taste woven into a moment of pure wonder. At Milkaboo, we elevate bubble tea into something truly enchanting.
             </p>
           </div>
         </div>
       </div>
 
-      {/* 2. PINNED PARALLAX SECTION */}
+      {/* 2. PINNED PARALLAX SECTION - Full Width Edge to Edge */}
       <div ref={containerRef} className="relative w-full h-[360vh] pb-36">
-        <div className="sticky top-24 sm:top-28 md:top-32 h-[calc(100vh-120px)] w-full overflow-hidden flex flex-col justify-center px-6 sm:px-12 lg:px-20 z-20">
+        <div className="sticky top-24 sm:top-28 md:top-32 h-[calc(100vh-120px)] w-full overflow-hidden flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-16 z-20">
 
           <div className="relative w-full overflow-visible my-auto py-10">
             <div
               ref={trackRef}
-              className="flex items-start gap-12 sm:gap-16 lg:gap-24 pl-6 pr-48 transition-transform duration-75 ease-out will-change-transform"
+              className="flex items-start gap-12 sm:gap-16 lg:gap-24 pl-2 sm:pl-4 pr-48 transition-transform duration-75 ease-out will-change-transform"
               style={{
                 transform: `translate3d(-${scrollTranslate}px, 0, 0)`,
               }}

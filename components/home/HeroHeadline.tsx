@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function HeroHeadline() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -33,8 +34,8 @@ export default function HeroHeadline() {
     >
       {/* Main Headline with initial entrance pop-up animation */}
       <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[100px] xl:text-[116px] font-[family-name:var(--font-luckiest-guy)] text-neutral-950 uppercase tracking-tight leading-[0.92] sm:leading-[0.9] select-none animate-in fade-in zoom-in-95 duration-1000">
-        TASTE THE BOO MAGIC
-
+        TASTE THE BOO <br />
+        MAGIC
       </h1>
     </section>
   );

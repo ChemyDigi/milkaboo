@@ -241,13 +241,16 @@ export default function DrinkShowcase() {
       {/* 
         LOCALIZED SECTION BACKGROUND: 
         Scoped exclusively within this section runway (absolute inset-0 z-0).
-        It smoothly cross-fades colors ONLY inside this particular section,
-        leaving the rest of the website (Hero, Navbar, Flavors, Footer) at their default #ede6f6 background!
+        Includes a smooth bottom gradient blend so it seamlessly dissolves 
+        into the #ede6f6 background of the Flavors section without any visible cut line!
       */}
       <div
         className="absolute inset-0 pointer-events-none z-0 transition-colors duration-700 ease-in-out"
         style={{ backgroundColor: currentProduct.bgColor }}
-      />
+      >
+        {/* Seamless bottom feather/blend gradient dissolving into #ede6f6 */}
+        <div className="absolute -bottom-1 inset-x-0 h-40 sm:h-56 md:h-72 bg-gradient-to-b from-transparent via-[#ede6f6]/60 to-[#ede6f6] pointer-events-none" />
+      </div>
 
       {/* Sticky Viewport Container */}
       <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 pt-16 sm:pt-20 md:pt-24 pb-6 z-10">
