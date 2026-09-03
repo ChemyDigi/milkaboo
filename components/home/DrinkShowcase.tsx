@@ -8,6 +8,8 @@ interface FloatingItem {
   alt: string;
   className: string;
   shadowClass?: string;
+  // Directional pop offset for pop-up arrival animation
+  popOffset?: string;
 }
 
 interface ProductShowcase {
@@ -26,7 +28,7 @@ export const showcaseProducts: ProductShowcase[] = [
     name: "Rose Milkaboo",
     flavor: "Rose Flavour",
     tagline: "Floral, Creamy & Enchanting",
-    bgColor: "#ede6f6",
+    bgColor: "#ede6f6", // Richer, clearly visible Sweet Pastel Rose Pink
     drinkImage: "/images/hand.png",
     floatingElements: [
       {
@@ -35,6 +37,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-left-10 sm:-left-20 md:-left-28 lg:-left-36 top-6 sm:top-10 md:top-14 w-20 h-20 sm:w-28 sm:h-28 md:w-34 md:h-34 lg:w-40 lg:h-40 -rotate-12 animate-float-drift-1 z-30",
         shadowClass: "drop-shadow-[0_12px_24px_rgba(244,63,94,0.22)]",
+        popOffset: "-translate-x-12 -translate-y-8",
       },
       {
         src: "/images/Home/rosemilka2.png",
@@ -42,6 +45,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-right-10 sm:-right-18 md:-right-26 lg:-right-34 top-8 sm:top-12 md:top-16 w-18 h-18 sm:w-26 sm:h-26 md:w-32 md:h-32 lg:w-36 lg:h-36 rotate-15 animate-float-drift-2 z-30",
         shadowClass: "drop-shadow-[0_12px_24px_rgba(244,63,94,0.18)]",
+        popOffset: "translate-x-12 -translate-y-8",
       },
       {
         src: "/images/Home/rosemilka4.png",
@@ -49,6 +53,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-left-12 sm:-left-22 md:-left-34 lg:-left-42 top-[44%] w-20 h-20 sm:w-28 sm:h-28 md:w-38 md:h-38 lg:w-44 lg:h-44 -rotate-20 animate-float-sway z-30",
         shadowClass: "drop-shadow-[0_14px_28px_rgba(244,63,94,0.2)]",
+        popOffset: "-translate-x-14 translate-y-4",
       },
       {
         src: "/images/Home/rosemilk3.png",
@@ -56,6 +61,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-right-12 sm:-right-22 md:-right-34 lg:-right-40 top-[40%] w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-42 lg:h-42 rotate-[20deg] animate-float-drift-3 z-30",
         shadowClass: "drop-shadow-[0_14px_28px_rgba(244,63,94,0.18)]",
+        popOffset: "translate-x-14 translate-y-4",
       },
       {
         src: "/images/Home/boba1.png",
@@ -63,6 +69,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-left-8 sm:-left-16 md:-left-20 lg:-left-26 bottom-12 sm:bottom-16 md:bottom-20 w-18 h-18 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 -rotate-12 animate-float-bob z-50",
         shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
+        popOffset: "-translate-x-10 translate-y-10",
       },
       {
         src: "/images/Home/boba2.png",
@@ -70,6 +77,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-right-8 sm:-right-14 md:-right-18 lg:-right-24 bottom-14 sm:bottom-20 md:bottom-24 w-16 h-16 sm:w-20 sm:h-20 md:w-26 md:h-26 lg:w-28 lg:h-28 rotate-15 animate-float-fast z-50",
         shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
+        popOffset: "translate-x-10 translate-y-10",
       },
     ],
   },
@@ -78,7 +86,7 @@ export const showcaseProducts: ProductShowcase[] = [
     name: "Apple Milkaboo",
     flavor: "Apple Flavour",
     tagline: "Crisp, Tangy & Refreshing",
-    bgColor: "#e2f6e9",
+    bgColor: "#d5f3dc", // Fresh Crisp Pastel Apple Mint Green
     drinkImage: "/images/hand apple milkaboo.png",
     floatingElements: [
       {
@@ -87,6 +95,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-left-10 sm:-left-20 md:-left-28 lg:-left-36 top-6 sm:top-10 md:top-14 w-20 h-20 sm:w-28 sm:h-28 md:w-34 md:h-34 lg:w-40 lg:h-40 -rotate-12 animate-float-drift-1 z-30",
         shadowClass: "drop-shadow-[0_12px_24px_rgba(34,197,94,0.22)]",
+        popOffset: "-translate-x-12 -translate-y-8",
       },
       {
         src: "/images/applemilka2.png",
@@ -94,6 +103,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-right-10 sm:-right-18 md:-right-26 lg:-right-34 top-8 sm:top-12 md:top-16 w-18 h-18 sm:w-26 sm:h-26 md:w-32 md:h-32 lg:w-36 lg:h-36 rotate-15 animate-float-drift-2 z-30",
         shadowClass: "drop-shadow-[0_12px_24px_rgba(34,197,94,0.18)]",
+        popOffset: "translate-x-12 -translate-y-8",
       },
       {
         src: "/images/applemilka3.png",
@@ -101,6 +111,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-left-12 sm:-left-22 md:-left-34 lg:-left-42 top-[44%] w-20 h-20 sm:w-28 sm:h-28 md:w-38 md:h-38 lg:w-44 lg:h-44 -rotate-20 animate-float-sway z-30",
         shadowClass: "drop-shadow-[0_14px_28px_rgba(34,197,94,0.2)]",
+        popOffset: "-translate-x-14 translate-y-4",
       },
       {
         src: "/images/applemilka1.png",
@@ -108,6 +119,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-right-12 sm:-right-22 md:-right-34 lg:-right-40 top-[40%] w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-42 lg:h-42 rotate-[20deg] animate-float-drift-3 z-30",
         shadowClass: "drop-shadow-[0_14px_28px_rgba(34,197,94,0.18)]",
+        popOffset: "translate-x-14 translate-y-4",
       },
       {
         src: "/images/boba1.png",
@@ -115,6 +127,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-left-8 sm:-left-16 md:-left-20 lg:-left-26 bottom-12 sm:bottom-16 md:bottom-20 w-18 h-18 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 -rotate-12 animate-float-bob z-50",
         shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
+        popOffset: "-translate-x-10 translate-y-10",
       },
       {
         src: "/images/boba2.png",
@@ -122,6 +135,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-right-8 sm:-right-14 md:-right-18 lg:-right-24 bottom-14 sm:bottom-20 md:bottom-24 w-16 h-16 sm:w-20 sm:h-20 md:w-26 md:h-26 lg:w-28 lg:h-28 rotate-15 animate-float-fast z-50",
         shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
+        popOffset: "translate-x-10 translate-y-10",
       },
     ],
   },
@@ -130,7 +144,7 @@ export const showcaseProducts: ProductShowcase[] = [
     name: "Blackcurrant Milkaboo",
     flavor: "Blackcurrant Flavour",
     tagline: "Bold, Berry-Rich & Vibrant",
-    bgColor: "#efe6f8",
+    bgColor: "#dfd2f5", // Richer, clearly visible Soft Berry Lilac Purple
     drinkImage: "/images/black current.png",
     floatingElements: [
       {
@@ -139,6 +153,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-left-10 sm:-left-20 md:-left-28 lg:-left-36 top-6 sm:top-10 md:top-14 w-20 h-20 sm:w-28 sm:h-28 md:w-34 md:h-34 lg:w-40 lg:h-40 -rotate-12 animate-float-drift-1 z-30",
         shadowClass: "drop-shadow-[0_12px_24px_rgba(147,51,234,0.22)]",
+        popOffset: "-translate-x-12 -translate-y-8",
       },
       {
         src: "/images/blackcurrentmilka2.png",
@@ -146,6 +161,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-right-10 sm:-right-18 md:-right-26 lg:-right-34 top-8 sm:top-12 md:top-16 w-18 h-18 sm:w-26 sm:h-26 md:w-32 md:h-32 lg:w-36 lg:h-36 rotate-15 animate-float-drift-2 z-30",
         shadowClass: "drop-shadow-[0_12px_24px_rgba(147,51,234,0.18)]",
+        popOffset: "translate-x-12 -translate-y-8",
       },
       {
         src: "/images/blackcurrentmilka7.png",
@@ -153,6 +169,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-left-12 sm:-left-22 md:-left-34 lg:-left-42 top-[44%] w-20 h-20 sm:w-28 sm:h-28 md:w-38 md:h-38 lg:w-44 lg:h-44 -rotate-20 animate-float-sway z-30",
         shadowClass: "drop-shadow-[0_14px_28px_rgba(147,51,234,0.2)]",
+        popOffset: "-translate-x-14 translate-y-4",
       },
       {
         src: "/images/blackcurrentmilka2.png",
@@ -160,6 +177,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-right-12 sm:-right-22 md:-right-34 lg:-right-40 top-[40%] w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-42 lg:h-42 rotate-[20deg] animate-float-drift-3 z-30",
         shadowClass: "drop-shadow-[0_14px_28px_rgba(147,51,234,0.18)]",
+        popOffset: "translate-x-14 translate-y-4",
       },
       {
         src: "/images/boba1.png",
@@ -167,6 +185,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-left-8 sm:-left-16 md:-left-20 lg:-left-26 bottom-12 sm:bottom-16 md:bottom-20 w-18 h-18 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 -rotate-12 animate-float-bob z-50",
         shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
+        popOffset: "-translate-x-10 translate-y-10",
       },
       {
         src: "/images/boba2.png",
@@ -174,6 +193,7 @@ export const showcaseProducts: ProductShowcase[] = [
         className:
           "-right-8 sm:-right-14 md:-right-18 lg:-right-24 bottom-14 sm:bottom-20 md:bottom-24 w-16 h-16 sm:w-20 sm:h-20 md:w-26 md:h-26 lg:w-28 lg:h-28 rotate-15 animate-float-fast z-50",
         shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
+        popOffset: "translate-x-10 translate-y-10",
       },
     ],
   },
@@ -182,6 +202,7 @@ export const showcaseProducts: ProductShowcase[] = [
 export default function DrinkShowcase() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -193,6 +214,7 @@ export default function DrinkShowcase() {
 
       const scrolled = -rect.top;
       const progress = Math.min(Math.max(scrolled / totalScrollable, 0), 0.999);
+      setScrollProgress(progress);
 
       const numProducts = showcaseProducts.length;
       const newIndex = Math.floor(progress * numProducts);
@@ -207,25 +229,33 @@ export default function DrinkShowcase() {
 
   const currentProduct = showcaseProducts[activeIndex];
 
+  // Dynamic parallax pop & tilt driven by scrolling momentum
+  const cupTilt = Math.sin(scrollProgress * Math.PI * 2) * 2.5; // slight responsive tilt
+  const cupPopScale = 1 + Math.sin(scrollProgress * Math.PI) * 0.04; // breathing momentum pop
+
   return (
     <div
       ref={containerRef}
       className="relative w-full h-[280vh] sm:h-[300vh]"
     >
-      {/* Dynamic Background Tint */}
+      {/* 
+        LOCALIZED SECTION BACKGROUND: 
+        Scoped exclusively within this section runway (absolute inset-0 z-0).
+        It smoothly cross-fades colors ONLY inside this particular section,
+        leaving the rest of the website (Hero, Navbar, Flavors, Footer) at their default #ede6f6 background!
+      */}
       <div
-        className="fixed inset-0 pointer-events-none -z-10 transition-colors duration-700 ease-in-out"
+        className="absolute inset-0 pointer-events-none z-0 transition-colors duration-700 ease-in-out"
         style={{ backgroundColor: currentProduct.bgColor }}
       />
 
       {/* Sticky Viewport Container */}
-      <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 pt-16 sm:pt-20 md:pt-24 pb-6">
+      <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 pt-16 sm:pt-20 md:pt-24 pb-6 z-10">
         {/* Central Showcase Section */}
         <section className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center z-10">
-          {/* Scaled up further to w-[340px] -> w-[780px] */}
           <div className="relative w-[340px] sm:w-[480px] md:w-[600px] lg:w-[700px] xl:w-[780px] flex items-center justify-center">
             {/* Cloud behind the top of the cup (Upper Center) */}
-            <div className="absolute -top-12 sm:-top-16 inset-x-0 mx-auto w-[360px] sm:w-[500px] md:w-[600px] h-[170px] sm:h-[220px] pointer-events-none select-none z-0 opacity-75 animate-float-fast [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)] [-webkit-mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]">
+            <div className="absolute -top-12 sm:-top-16 inset-x-0 mx-auto w-[360px] sm:w-[500px] md:w-[600px] h-[170px] sm:h-[220px] pointer-events-none select-none z-0 opacity-75 animate-float-fast [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)] [-webkit-mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)] transition-transform duration-500">
               <Image
                 src="/images/Home/Clouds.png"
                 alt="Upper Center Cloud"
@@ -284,18 +314,22 @@ export default function DrinkShowcase() {
               />
             </div>
 
-            {/* ================= CENTERPIECE DRINK CUPS (SCALED UP MORE) ================= */}
-            <div className="relative z-20 w-full flex items-center justify-center">
+            {/* ================= CENTERPIECE DRINK CUPS (SMOOTH POP UP ANIMATION) ================= */}
+            <div
+              className="relative z-20 w-full flex items-center justify-center transition-transform duration-500 ease-out will-change-transform"
+              style={{
+                transform: `scale(${cupPopScale}) rotate(${cupTilt}deg)`,
+              }}
+            >
               {showcaseProducts.map((product, idx) => {
                 const isActive = activeIndex === idx;
                 return (
                   <div
                     key={product.id}
-                    className={`w-full transition-all duration-700 ease-out ${
-                      isActive
-                        ? "opacity-100 scale-100 z-20"
-                        : "opacity-0 scale-95 pointer-events-none absolute inset-0 z-10"
-                    }`}
+                    className={`w-full transition-all duration-700 ease-out will-change-transform ${isActive
+                      ? "opacity-100 scale-100 translate-y-0 z-20"
+                      : "opacity-0 scale-90 translate-y-8 pointer-events-none absolute inset-0 z-10"
+                      }`}
                   >
                     <Image
                       src={product.drinkImage}
@@ -310,24 +344,25 @@ export default function DrinkShowcase() {
               })}
             </div>
 
-            {/* ================= PRODUCT SPECIFIC FLOATING ELEMENTS ================= */}
+            {/* ================= PRODUCT SPECIFIC FLOATING ELEMENTS WITH POP-UP BURST ================= */}
             {showcaseProducts.map((product, idx) => {
               const isActive = activeIndex === idx;
               return (
                 <div
                   key={`elements-${product.id}`}
-                  className={`absolute inset-0 pointer-events-none transition-all duration-700 ease-out ${
-                    isActive
-                      ? "opacity-100 scale-100 pointer-events-auto"
-                      : "opacity-0 scale-90 pointer-events-none"
-                  }`}
+                  className={`absolute inset-0 pointer-events-none transition-all duration-700 ease-out ${isActive
+                    ? "opacity-100 scale-100 pointer-events-auto"
+                    : "opacity-0 scale-75 pointer-events-none"
+                    }`}
                 >
                   {product.floatingElements.map((el, elIdx) => (
                     <div
                       key={`${product.id}-el-${elIdx}`}
-                      className={`absolute pointer-events-none select-none ${el.className} ${
-                        el.shadowClass || ""
-                      }`}
+                      className={`absolute pointer-events-none select-none transition-all duration-700 ease-out will-change-transform ${el.className
+                        } ${el.shadowClass || ""} ${isActive
+                          ? "opacity-100 scale-100 translate-x-0 translate-y-0"
+                          : `opacity-0 scale-50 ${el.popOffset || ""}`
+                        }`}
                     >
                       <Image
                         src={el.src}

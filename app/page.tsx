@@ -16,8 +16,8 @@ export default function Home() {
       {/* Centerpiece Drink Cup with Layered Clouds & Scroll Sticky Transitions */}
       <DrinkShowcase />
 
-      {/* Flavor Section */}
-      <div className="w-full px-4 sm:px-6 lg:px-8 pb-20 sm:pb-32">
+      {/* Flavor Section: Full edge-to-edge width without extra outer margin/padding cropping */}
+      <div className="w-full pb-20 sm:pb-32">
         <FlavorSection />
       </div>
     </div>

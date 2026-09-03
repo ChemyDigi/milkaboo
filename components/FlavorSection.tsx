@@ -272,7 +272,7 @@ export default function FlavorSection() {
   }, []);
 
   return (
-    <div id="flavors" className="relative w-full bg-[#ede6f6]">
+    <div id="flavors" className="relative w-full bg-[#dfd2f5]">
       {/* 1. TOP HEADER WORDING SECTION */}
       <div className="w-full max-w-7xl mx-auto pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-14 px-6 sm:px-12 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-start">
@@ -295,7 +295,7 @@ export default function FlavorSection() {
       {/* 2. PINNED PARALLAX SECTION */}
       <div ref={containerRef} className="relative w-full h-[360vh] pb-36">
         <div className="sticky top-24 sm:top-28 md:top-32 h-[calc(100vh-120px)] w-full overflow-hidden flex flex-col justify-center px-6 sm:px-12 lg:px-20 z-20">
-          
+
           <div className="relative w-full overflow-visible my-auto py-10">
             <div
               ref={trackRef}
@@ -315,7 +315,7 @@ export default function FlavorSection() {
                   >
                     {/* Outer Card Wrapper with overflow-visible */}
                     <div className="relative w-full overflow-visible">
-                      
+
                       {/* Rounded Colored Card Background */}
                       <div className="relative w-full h-[220px] sm:h-[260px] md:h-[280px] lg:h-[300px] rounded-[32px] sm:rounded-[40px] overflow-hidden shadow-xl transition-all duration-500 group-hover:shadow-2xl">
                         <div className={`absolute inset-0 ${item.cardBg}`} />
@@ -337,9 +337,8 @@ export default function FlavorSection() {
                           className="absolute top-4 right-4 sm:top-5 sm:right-5 z-40 p-2.5 sm:p-3 rounded-full bg-white/85 backdrop-blur-md text-neutral-600 hover:text-rose-500 hover:bg-white shadow-md transition-transform active:scale-125 cursor-pointer"
                         >
                           <Heart
-                            className={`w-4 h-4 sm:w-5 sm:h-5 ${
-                              isFav ? "fill-rose-500 text-rose-500" : ""
-                            }`}
+                            className={`w-4 h-4 sm:w-5 sm:h-5 ${isFav ? "fill-rose-500 text-rose-500" : ""
+                              }`}
                           />
                         </button>
                       </div>
@@ -392,11 +391,10 @@ export default function FlavorSection() {
                             e.stopPropagation();
                             handleAddToCart(item.id);
                           }}
-                          className={`inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider shadow-sm active:scale-95 transition-all duration-200 cursor-pointer ${
-                            isAdded
-                              ? "bg-emerald-600 text-white"
-                              : `${item.btnBg} hover:shadow-md`
-                          }`}
+                          className={`inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider shadow-sm active:scale-95 transition-all duration-200 cursor-pointer ${isAdded
+                            ? "bg-emerald-600 text-white"
+                            : `${item.btnBg} hover:shadow-md`
+                            }`}
                         >
                           {isAdded ? (
                             <>
