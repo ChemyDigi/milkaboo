@@ -140,6 +140,64 @@ export const showcaseProducts: ProductShowcase[] = [
     ],
   },
   {
+    id: "custard-milkaboo",
+    name: "Custard Milkaboo",
+    flavor: "Custard Pudding Flavour",
+    tagline: "Velvety, Caramel-Glazed & Indulgent",
+    bgColor: "#fef3c7", // Warm pastel custard cream yellow
+    drinkImage: "/images/custard.png",
+    floatingElements: [
+      {
+        src: "/images/custard_pudding.png",
+        alt: "Golden Custard Tart",
+        className:
+          "-left-10 sm:-left-20 md:-left-28 lg:-left-36 top-6 sm:top-10 md:top-14 w-20 h-20 sm:w-28 sm:h-28 md:w-34 md:h-34 lg:w-40 lg:h-40 -rotate-12 animate-float-drift-1 z-30",
+        shadowClass: "drop-shadow-[0_12px_24px_rgba(217,119,6,0.25)]",
+        popOffset: "-translate-x-12 -translate-y-8",
+      },
+      {
+        src: "/images/caramel_swirl.png",
+        alt: "Caramel Drizzle",
+        className:
+          "-right-10 sm:-right-18 md:-right-26 lg:-right-34 top-8 sm:top-12 md:top-16 w-18 h-18 sm:w-26 sm:h-26 md:w-32 md:h-32 lg:w-36 lg:h-36 rotate-15 animate-float-drift-2 z-30",
+        shadowClass: "drop-shadow-[0_12px_24px_rgba(217,119,6,0.25)]",
+        popOffset: "translate-x-12 -translate-y-8",
+      },
+      {
+        src: "/images/custard_splash.png",
+        alt: "Custard Splash",
+        className:
+          "-left-12 sm:-left-22 md:-left-34 lg:-left-42 top-[44%] w-22 h-22 sm:w-30 sm:h-30 md:w-40 md:h-40 lg:w-46 lg:h-46 -rotate-20 animate-float-sway z-30",
+        shadowClass: "drop-shadow-[0_14px_28px_rgba(217,119,6,0.22)]",
+        popOffset: "-translate-x-14 translate-y-4",
+      },
+      {
+        src: "/images/vanilla_flower.png",
+        alt: "Vanilla Orchid",
+        className:
+          "-right-12 sm:-right-22 md:-right-34 lg:-right-40 top-[40%] w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-42 lg:h-42 rotate-[20deg] animate-float-drift-3 z-30",
+        shadowClass: "drop-shadow-[0_14px_28px_rgba(202,138,4,0.2)]",
+        popOffset: "translate-x-14 translate-y-4",
+      },
+      {
+        src: "/images/boba1.png",
+        alt: "Glossy Boba Cluster",
+        className:
+          "-left-8 sm:-left-16 md:-left-20 lg:-left-26 bottom-12 sm:bottom-16 md:bottom-20 w-18 h-18 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 -rotate-12 animate-float-bob z-50",
+        shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
+        popOffset: "-translate-x-10 translate-y-10",
+      },
+      {
+        src: "/images/boba2.png",
+        alt: "Fresh Boba Pearl",
+        className:
+          "-right-8 sm:-right-14 md:-right-18 lg:-right-24 bottom-14 sm:bottom-20 md:bottom-24 w-16 h-16 sm:w-20 sm:h-20 md:w-26 md:h-26 lg:w-28 lg:h-28 rotate-15 animate-float-fast z-50",
+        shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
+        popOffset: "translate-x-10 translate-y-10",
+      },
+    ],
+  },
+  {
     id: "blackcurrant-milkaboo",
     name: "Blackcurrant Milkaboo",
     flavor: "Blackcurrant Flavour",
@@ -236,7 +294,7 @@ export default function DrinkShowcase() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[280vh] sm:h-[300vh]"
+      className="relative w-full h-[360vh] sm:h-[400vh]"
     >
       {/* 
         LOCALIZED SECTION BACKGROUND: 

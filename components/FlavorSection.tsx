@@ -152,6 +152,64 @@ const flavorsData: FlavorProduct[] = [
     ],
   },
   {
+    id: "custard-milkaboo",
+    name: "CUSTARD MILKABOO",
+    flavor: "Velvety & Caramelized",
+    tagline: "Rich golden egg custard pudding layered with amber caramel and boba.",
+    description:
+      "A decadent blend of silk egg custard pudding, creamy Madagascar vanilla milk tea, and caramelized brown sugar boba pearls.",
+    price: "$6.85",
+    rating: 5.0,
+    reviewsCount: 168,
+    image: "/images/custard.png",
+    cardBg: "bg-[#fde68a]",
+    cardPattern: "/images/custard_pattern.png",
+    accentColor: "from-amber-400 to-yellow-500",
+    badgeBg: "bg-amber-100/90 border-amber-200 text-amber-800",
+    badgeText: "text-amber-800",
+    btnBg: "bg-[#d8f96e] hover:bg-[#c9ef56] text-neutral-950",
+    btnText: "text-neutral-950",
+    notes: ["Egg Custard Pudding", "Amber Caramel", "Brown Sugar Boba"],
+    floatElements: [
+      {
+        src: "/images/custard_pudding.png",
+        alt: "Custard Tart",
+        // Top-Left quadrant
+        basePosClass: "top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-50 opacity-0",
+        hoverTransform: "group-hover:-translate-x-40 sm:group-hover:-translate-x-54 group-hover:-translate-y-36 sm:group-hover:-translate-y-46 group-hover:-rotate-12 group-hover:scale-100 group-hover:opacity-100",
+        sizeClass: "w-22 h-22 sm:w-28 sm:h-28 md:w-34 md:h-34",
+        animation: "animate-float-gentle",
+      },
+      {
+        src: "/images/caramel_swirl.png",
+        alt: "Caramel Drizzle",
+        // Top-Right quadrant
+        basePosClass: "top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-50 opacity-0",
+        hoverTransform: "group-hover:translate-x-40 sm:group-hover:translate-x-52 group-hover:-translate-y-32 sm:group-hover:-translate-y-40 group-hover:rotate-12 group-hover:scale-100 group-hover:opacity-100",
+        sizeClass: "w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28",
+        animation: "animate-float-reverse",
+      },
+      {
+        src: "/images/custard_splash.png",
+        alt: "Custard Splash",
+        // Mid-Left quadrant: floats directly leftwards
+        basePosClass: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-50 opacity-0",
+        hoverTransform: "group-hover:-translate-x-44 sm:group-hover:-translate-x-56 group-hover:-translate-y-2 sm:group-hover:-translate-y-4 group-hover:-rotate-6 group-hover:scale-100 group-hover:opacity-100",
+        sizeClass: "w-18 h-18 sm:w-22 sm:h-22 md:w-26 md:h-26",
+        animation: "animate-float-gentle",
+      },
+      {
+        src: "/images/vanilla_flower.png",
+        alt: "Vanilla Orchid",
+        // Mid-Right quadrant: floats directly rightwards
+        basePosClass: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-50 opacity-0",
+        hoverTransform: "group-hover:translate-x-44 sm:group-hover:translate-x-56 group-hover:-translate-y-2 sm:group-hover:-translate-y-4 group-hover:rotate-12 group-hover:scale-100 group-hover:opacity-100",
+        sizeClass: "w-16 h-16 sm:w-20 sm:h-20 md:w-22 md:h-22",
+        animation: "animate-float-reverse",
+      },
+    ],
+  },
+  {
     id: "blackcurrant-milkaboo",
     name: "BLACKCURRANT MILKABOO",
     flavor: "Rich & Tart Berry",
