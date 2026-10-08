@@ -276,7 +276,7 @@ export default function DrinkShowcase() {
                 }`}
               >
                 {/* LEFT: number watermark + eyebrow + giant word, left aligned */}
-                <div className="absolute left-[5%] sm:left-[7%] md:left-[9%] lg:left-[10%] top-[14%] sm:top-[15%] md:top-[16%] flex flex-col items-start text-left">
+                <div key={`left-${isActive}`} className={`${isActive ? "animate-hero-drop-ease" : ""} absolute left-[5%] sm:left-[7%] md:left-[9%] lg:left-[10%] top-[14%] sm:top-[15%] md:top-[16%] flex flex-col items-start text-left`}>
                   <div className="relative">
                     <span className="absolute -top-8 sm:-top-12 md:-top-14 lg:-top-16 left-2 sm:left-4 md:text-8xl text-5xl sm:text-6xl md:text-7xl lg:text-[95px] xl:text-[105px] font-[family-name:var(--font-luckiest-guy)] text-white/35 leading-none select-none">
                       {product.num}
@@ -291,7 +291,7 @@ export default function DrinkShowcase() {
                 </div>
 
                 {/* RIGHT: second word, lower and brought closer towards the center to fit comfortably within the screen */}
-                <div className="absolute left-[52%] sm:left-[54%] md:left-[55%] lg:left-[56%] top-[34%] sm:top-[33%] md:top-[32%] max-w-[45vw]">
+                <div key={`right-${isActive}`} className={`${isActive ? "animate-hero-drop-ease" : ""} absolute left-[52%] sm:left-[54%] md:left-[55%] lg:left-[56%] top-[34%] sm:top-[33%] md:top-[32%] max-w-[45vw]`}>
                   <h1 className="text-6xl sm:text-7xl md:text-[110px] lg:text-[140px] xl:text-[175px] 2xl:text-[200px] font-[family-name:var(--font-luckiest-guy)] text-white uppercase tracking-tight leading-[0.85]">
                     {product.rightHeadline}
                   </h1>
@@ -323,6 +323,7 @@ export default function DrinkShowcase() {
                         : "opacity-0 scale-90 translate-y-12 pointer-events-none absolute inset-0 z-10"
                     }`}
                   >
+                    <div key={`cup-anim-${isActive}`} className={isActive ? "animate-hero-drop-spring" : ""}>
                     <Image
                       src={product.drinkImage}
                       alt={product.name}
@@ -331,6 +332,7 @@ export default function DrinkShowcase() {
                       priority={idx === 0}
                       className="w-full max-h-[80vh] sm:max-h-[88vh] md:max-h-[94vh] lg:max-h-[98vh] h-auto object-contain select-none pointer-events-none drop-shadow-[0_32px_60px_rgba(0,0,0,0.28)]"
                     />
+                    </div>
                   </div>
                 );
               })}
@@ -357,12 +359,18 @@ export default function DrinkShowcase() {
                           : `opacity-0 scale-50 ${el.popOffset || ""}`
                       }`}
                     >
-                      <Image
-                        src={el.src}
-                        alt={el.alt}
-                        fill
-                        className="object-contain"
-                      />
+                      <div
+                        key={`el-anim-${isActive}`}
+                        className={`absolute inset-0 ${isActive ? "animate-hero-drop-spring-fruit" : ""}`}
+                        style={{ animationDelay: `${0.08 * elIdx}s` }}
+                      >
+                        <Image
+                          src={el.src}
+                          alt={el.alt}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -372,7 +380,7 @@ export default function DrinkShowcase() {
         </div>
 
         {/* ================= BOTTOM LEFT: DESCRIPTION + ORDER BUTTON ================= */}
-        <div className="absolute left-[6%] sm:left-[9%] md:left-[11%] lg:left-[12%] bottom-[6%] sm:bottom-[7%] z-40 w-[80%] max-w-xs sm:max-w-sm md:max-w-md pointer-events-auto">
+        <div key={`bottom-${activeIndex}`} className="animate-hero-rise absolute left-[6%] sm:left-[9%] md:left-[11%] lg:left-[12%] bottom-[6%] sm:bottom-[7%] z-40 w-[80%] max-w-xs sm:max-w-sm md:max-w-md pointer-events-auto">
           {showcaseProducts.map((product, idx) => {
             const isActive = activeIndex === idx;
             return (
@@ -389,7 +397,9 @@ export default function DrinkShowcase() {
             );
           })}
           <a
-            href="#"
+            href="https://www.doordash.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-5 sm:mt-6 inline-flex items-center gap-2 h-12 sm:h-14 px-8 sm:px-10 rounded-full bg-white text-neutral-900 text-sm sm:text-base font-bold shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:scale-105"
           >
             <svg viewBox="0 0 24 24" className="w-5 h-5" aria-hidden="true">
