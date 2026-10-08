@@ -8,250 +8,199 @@ interface FloatingItem {
   alt: string;
   className: string;
   shadowClass?: string;
-  // Directional pop offset for pop-up arrival animation
   popOffset?: string;
 }
 
 interface ProductShowcase {
   id: string;
+  num: string;
   name: string;
   flavor: string;
-  tagline: string;
-  bgColor: string;
+  eyebrow: string;
+  leftHeadline: string;
+  rightHeadline: string;
+  description: string;
   drinkImage: string;
+  snackImage: string;
+  snackTitle: string;
+  bgColor: string;
   floatingElements: FloatingItem[];
 }
 
 export const showcaseProducts: ProductShowcase[] = [
   {
     id: "rose-milkaboo",
+    bgColor: "#f04e7a",
+    num: "01",
     name: "Rose Milkaboo",
     flavor: "Rose Flavour",
-    tagline: "Floral, Creamy & Enchanting",
-    bgColor: "#ede6f6", // Richer, clearly visible Sweet Pastel Rose Pink
+    eyebrow: "YOUR ONE STOP",
+    leftHeadline: "ROSE",
+    rightHeadline: "BOO",
+    description:
+      "Milkaboo Dirty Soda And Exotic Snacks, It's A Mouthful But That's Kind Of What We Are All About. Welcome To Your One Stop Shop For Delicious Drinks And Snacks From All Over The World.",
     drinkImage: "/images/hand.png",
+    snackImage: "/images/rosemilk.png",
+    snackTitle: "Miss Rose Boba",
     floatingElements: [
+      // 1. TOP-CENTER/LEFT: Sub image near the top of the drink cup (like top orange)
       {
         src: "/images/Home/rosemilka1.png",
-        alt: "Rose Blossom",
+        alt: "Rose Blossom Top",
         className:
-          "-left-10 sm:-left-20 md:-left-28 lg:-left-36 top-6 sm:top-10 md:top-14 w-20 h-20 sm:w-28 sm:h-28 md:w-34 md:h-34 lg:w-40 lg:h-40 -rotate-12 animate-float-drift-1 z-30",
-        shadowClass: "drop-shadow-[0_12px_24px_rgba(244,63,94,0.22)]",
-        popOffset: "-translate-x-12 -translate-y-8",
+          "left-[27%] sm:left-[30%] md:left-[32%] lg:left-[33%] top-[3%] sm:top-[4%] md:top-[5%] w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 -rotate-[10deg] animate-float-drift-1 z-20",
+        shadowClass: "drop-shadow-[0_20px_35px_rgba(244,63,94,0.3)]",
+        popOffset: "-translate-x-8 -translate-y-8",
       },
-      {
-        src: "/images/Home/rosemilka2.png",
-        alt: "Rose Ice Element",
-        className:
-          "-right-10 sm:-right-18 md:-right-26 lg:-right-34 top-8 sm:top-12 md:top-16 w-18 h-18 sm:w-26 sm:h-26 md:w-32 md:h-32 lg:w-36 lg:h-36 rotate-15 animate-float-drift-2 z-30",
-        shadowClass: "drop-shadow-[0_12px_24px_rgba(244,63,94,0.18)]",
-        popOffset: "translate-x-12 -translate-y-8",
-      },
-      {
-        src: "/images/Home/rosemilka4.png",
-        alt: "Rose Petal Splash",
-        className:
-          "-left-12 sm:-left-22 md:-left-34 lg:-left-42 top-[44%] w-20 h-20 sm:w-28 sm:h-28 md:w-38 md:h-38 lg:w-44 lg:h-44 -rotate-20 animate-float-sway z-30",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(244,63,94,0.2)]",
-        popOffset: "-translate-x-14 translate-y-4",
-      },
+      // 2. BOTTOM-RIGHT: Sub image peeking near the bottom right under the snack/cup (like bottom orange)
       {
         src: "/images/Home/rosemilk3.png",
-        alt: "Rose Bloom",
+        alt: "Rose Bloom Bottom Right",
         className:
-          "-right-12 sm:-right-22 md:-right-34 lg:-right-40 top-[40%] w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-42 lg:h-42 rotate-[20deg] animate-float-drift-3 z-30",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(244,63,94,0.18)]",
-        popOffset: "translate-x-14 translate-y-4",
-      },
-      {
-        src: "/images/Home/boba1.png",
-        alt: "Glossy Boba Cluster",
-        className:
-          "-left-8 sm:-left-16 md:-left-20 lg:-left-26 bottom-12 sm:bottom-16 md:bottom-20 w-18 h-18 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 -rotate-12 animate-float-bob z-50",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
-        popOffset: "-translate-x-10 translate-y-10",
-      },
-      {
-        src: "/images/Home/boba2.png",
-        alt: "Fresh Boba Pearl",
-        className:
-          "-right-8 sm:-right-14 md:-right-18 lg:-right-24 bottom-14 sm:bottom-20 md:bottom-24 w-16 h-16 sm:w-20 sm:h-20 md:w-26 md:h-26 lg:w-28 lg:h-28 rotate-15 animate-float-fast z-50",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
+          "right-[20%] sm:right-[22%] md:right-[24%] lg:right-[25%] bottom-[2%] sm:bottom-[3%] md:bottom-[4%] w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rotate-[15deg] animate-float-drift-2 z-20",
+        shadowClass: "drop-shadow-[0_24px_40px_rgba(244,63,94,0.28)]",
         popOffset: "translate-x-10 translate-y-10",
+      },
+      // 3. TOP-RIGHT CORNER: Giant, blurred element in the top right corner, half displayed / half out of screen
+      {
+        src: "/images/Home/rosemilka1.png",
+        alt: "Rose Bloom Edge Blurred",
+        className:
+          "-right-28 sm:-right-36 md:-right-44 lg:-right-52 -top-20 sm:-top-24 md:-top-32 w-72 h-72 sm:w-96 sm:h-96 md:w-[440px] md:h-[440px] lg:w-[540px] lg:h-[540px] rotate-[22deg] blur-[8px] sm:blur-[12px] opacity-85 z-10",
+        shadowClass: "drop-shadow-[0_30px_60px_rgba(244,63,94,0.35)]",
+        popOffset: "translate-x-16 -translate-y-6",
       },
     ],
   },
   {
     id: "apple-milkaboo",
+    bgColor: "#5cb531",
+    num: "02",
     name: "Apple Milkaboo",
     flavor: "Apple Flavour",
-    tagline: "Crisp, Tangy & Refreshing",
-    bgColor: "#d5f3dc", // Fresh Crisp Pastel Apple Mint Green
+    eyebrow: "YOUR ONE STOP",
+    leftHeadline: "FLAVOR",
+    rightHeadline: "SHOP",
+    description:
+      "Johnny's Dirty Soda And Exotic Snacks, It's A Mouthful But That's Kind OF What We Are All About. Welcome To Your One Stop Shop For Delicious Drinks And Snacks From All Over The World.",
     drinkImage: "/images/hand apple milkaboo.png",
+    snackImage: "/images/greenapple.png",
+    snackTitle: "Miss Apple Crisp",
     floatingElements: [
-      {
-        src: "/images/applemilka1.png",
-        alt: "Apple Slices",
-        className:
-          "-left-10 sm:-left-20 md:-left-28 lg:-left-36 top-6 sm:top-10 md:top-14 w-20 h-20 sm:w-28 sm:h-28 md:w-34 md:h-34 lg:w-40 lg:h-40 -rotate-12 animate-float-drift-1 z-30",
-        shadowClass: "drop-shadow-[0_12px_24px_rgba(34,197,94,0.22)]",
-        popOffset: "-translate-x-12 -translate-y-8",
-      },
+      // 1. TOP-CENTER/LEFT: Whole apple/slice matching top orange position
       {
         src: "/images/applemilka2.png",
-        alt: "Green Apple",
+        alt: "Green Apple Top",
         className:
-          "-right-10 sm:-right-18 md:-right-26 lg:-right-34 top-8 sm:top-12 md:top-16 w-18 h-18 sm:w-26 sm:h-26 md:w-32 md:h-32 lg:w-36 lg:h-36 rotate-15 animate-float-drift-2 z-30",
-        shadowClass: "drop-shadow-[0_12px_24px_rgba(34,197,94,0.18)]",
-        popOffset: "translate-x-12 -translate-y-8",
+          "left-[27%] sm:left-[30%] md:left-[32%] lg:left-[33%] top-[3%] sm:top-[4%] md:top-[5%] w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 -rotate-[10deg] animate-float-drift-1 z-20",
+        shadowClass: "drop-shadow-[0_20px_35px_rgba(34,197,94,0.3)]",
+        popOffset: "-translate-x-8 -translate-y-8",
       },
-      {
-        src: "/images/applemilka3.png",
-        alt: "Apple Splash",
-        className:
-          "-left-12 sm:-left-22 md:-left-34 lg:-left-42 top-[44%] w-20 h-20 sm:w-28 sm:h-28 md:w-38 md:h-38 lg:w-44 lg:h-44 -rotate-20 animate-float-sway z-30",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(34,197,94,0.2)]",
-        popOffset: "-translate-x-14 translate-y-4",
-      },
+      // 2. BOTTOM-RIGHT: Matching lower orange position
       {
         src: "/images/applemilka1.png",
-        alt: "Crisp Apple Piece",
+        alt: "Apple Slice Bottom Right",
         className:
-          "-right-12 sm:-right-22 md:-right-34 lg:-right-40 top-[40%] w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-42 lg:h-42 rotate-[20deg] animate-float-drift-3 z-30",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(34,197,94,0.18)]",
-        popOffset: "translate-x-14 translate-y-4",
-      },
-      {
-        src: "/images/boba1.png",
-        alt: "Glossy Boba Cluster",
-        className:
-          "-left-8 sm:-left-16 md:-left-20 lg:-left-26 bottom-12 sm:bottom-16 md:bottom-20 w-18 h-18 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 -rotate-12 animate-float-bob z-50",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
-        popOffset: "-translate-x-10 translate-y-10",
-      },
-      {
-        src: "/images/boba2.png",
-        alt: "Fresh Boba Pearl",
-        className:
-          "-right-8 sm:-right-14 md:-right-18 lg:-right-24 bottom-14 sm:bottom-20 md:bottom-24 w-16 h-16 sm:w-20 sm:h-20 md:w-26 md:h-26 lg:w-28 lg:h-28 rotate-15 animate-float-fast z-50",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
+          "right-[20%] sm:right-[22%] md:right-[24%] lg:right-[25%] bottom-[2%] sm:bottom-[3%] md:bottom-[4%] w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rotate-[15deg] animate-float-drift-2 z-20",
+        shadowClass: "drop-shadow-[0_24px_40px_rgba(34,197,94,0.28)]",
         popOffset: "translate-x-10 translate-y-10",
+      },
+      // 3. TOP-RIGHT CORNER: Giant, blurred element in the top right corner, half displayed / half out of screen
+      {
+        src: "/images/applemilka2.png",
+        alt: "Green Apple Edge Blurred",
+        className:
+          "-right-28 sm:-right-36 md:-right-44 lg:-right-52 -top-20 sm:-top-24 md:-top-32 w-72 h-72 sm:w-96 sm:h-96 md:w-[440px] md:h-[440px] lg:w-[540px] lg:h-[540px] rotate-[22deg] blur-[8px] sm:blur-[12px] opacity-85 z-10",
+        shadowClass: "drop-shadow-[0_30px_60px_rgba(34,197,94,0.35)]",
+        popOffset: "translate-x-16 -translate-y-6",
       },
     ],
   },
   {
     id: "custard-milkaboo",
+    bgColor: "#f4a300",
+    num: "03",
     name: "Custard Milkaboo",
-    flavor: "Custard Pudding Flavour",
-    tagline: "Velvety, Caramel-Glazed & Indulgent",
-    bgColor: "#fef3c7", // Warm pastel custard cream yellow
+    flavor: "Custard Flavour",
+    eyebrow: "YOUR ONE STOP",
+    leftHeadline: "SWEET",
+    rightHeadline: "CUSTARD",
+    description:
+      "Milkaboo Dirty Soda And Exotic Snacks, It's A Mouthful But That's Kind Of What We Are All About. Welcome To Your One Stop Shop For Delicious Drinks And Snacks From All Over The World.",
     drinkImage: "/images/custard.png",
+    snackImage: "/images/custard_pudding.png",
+    snackTitle: "Miss Custard Tart",
     floatingElements: [
+      // 1. TOP-CENTER/LEFT: Tart matching top orange position
       {
         src: "/images/custard_pudding.png",
-        alt: "Golden Custard Tart",
+        alt: "Golden Custard Tart Top",
         className:
-          "-left-10 sm:-left-20 md:-left-28 lg:-left-36 top-6 sm:top-10 md:top-14 w-20 h-20 sm:w-28 sm:h-28 md:w-34 md:h-34 lg:w-40 lg:h-40 -rotate-12 animate-float-drift-1 z-30",
-        shadowClass: "drop-shadow-[0_12px_24px_rgba(217,119,6,0.25)]",
-        popOffset: "-translate-x-12 -translate-y-8",
+          "left-[27%] sm:left-[30%] md:left-[32%] lg:left-[33%] top-[3%] sm:top-[4%] md:top-[5%] w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 -rotate-[10deg] animate-float-drift-1 z-20",
+        shadowClass: "drop-shadow-[0_20px_35px_rgba(217,119,6,0.3)]",
+        popOffset: "-translate-x-8 -translate-y-8",
       },
-      {
-        src: "/images/caramel_swirl.png",
-        alt: "Caramel Drizzle",
-        className:
-          "-right-10 sm:-right-18 md:-right-26 lg:-right-34 top-8 sm:top-12 md:top-16 w-18 h-18 sm:w-26 sm:h-26 md:w-32 md:h-32 lg:w-36 lg:h-36 rotate-15 animate-float-drift-2 z-30",
-        shadowClass: "drop-shadow-[0_12px_24px_rgba(217,119,6,0.25)]",
-        popOffset: "translate-x-12 -translate-y-8",
-      },
-      {
-        src: "/images/custard_splash.png",
-        alt: "Custard Splash",
-        className:
-          "-left-12 sm:-left-22 md:-left-34 lg:-left-42 top-[44%] w-22 h-22 sm:w-30 sm:h-30 md:w-40 md:h-40 lg:w-46 lg:h-46 -rotate-20 animate-float-sway z-30",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(217,119,6,0.22)]",
-        popOffset: "-translate-x-14 translate-y-4",
-      },
+      // 2. BOTTOM-RIGHT: Matching lower orange position
       {
         src: "/images/vanilla_flower.png",
-        alt: "Vanilla Orchid",
+        alt: "Vanilla Orchid Bottom Right",
         className:
-          "-right-12 sm:-right-22 md:-right-34 lg:-right-40 top-[40%] w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-42 lg:h-42 rotate-[20deg] animate-float-drift-3 z-30",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(202,138,4,0.2)]",
-        popOffset: "translate-x-14 translate-y-4",
-      },
-      {
-        src: "/images/boba1.png",
-        alt: "Glossy Boba Cluster",
-        className:
-          "-left-8 sm:-left-16 md:-left-20 lg:-left-26 bottom-12 sm:bottom-16 md:bottom-20 w-18 h-18 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 -rotate-12 animate-float-bob z-50",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
-        popOffset: "-translate-x-10 translate-y-10",
-      },
-      {
-        src: "/images/boba2.png",
-        alt: "Fresh Boba Pearl",
-        className:
-          "-right-8 sm:-right-14 md:-right-18 lg:-right-24 bottom-14 sm:bottom-20 md:bottom-24 w-16 h-16 sm:w-20 sm:h-20 md:w-26 md:h-26 lg:w-28 lg:h-28 rotate-15 animate-float-fast z-50",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
+          "right-[20%] sm:right-[22%] md:right-[24%] lg:right-[25%] bottom-[2%] sm:bottom-[3%] md:bottom-[4%] w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rotate-[15deg] animate-float-drift-2 z-20",
+        shadowClass: "drop-shadow-[0_24px_40px_rgba(217,119,6,0.28)]",
         popOffset: "translate-x-10 translate-y-10",
+      },
+      // 3. TOP-RIGHT CORNER: Giant, blurred element in the top right corner, half displayed / half out of screen
+      {
+        src: "/images/custard_pudding.png",
+        alt: "Custard Edge Blurred",
+        className:
+          "-right-28 sm:-right-36 md:-right-44 lg:-right-52 -top-20 sm:-top-24 md:-top-32 w-72 h-72 sm:w-96 sm:h-96 md:w-[440px] md:h-[440px] lg:w-[540px] lg:h-[540px] rotate-[22deg] blur-[8px] sm:blur-[12px] opacity-85 z-10",
+        shadowClass: "drop-shadow-[0_30px_60px_rgba(217,119,6,0.35)]",
+        popOffset: "translate-x-16 -translate-y-6",
       },
     ],
   },
   {
     id: "blackcurrant-milkaboo",
+    bgColor: "#6d28a8",
+    num: "04",
     name: "Blackcurrant Milkaboo",
     flavor: "Blackcurrant Flavour",
-    tagline: "Bold, Berry-Rich & Vibrant",
-    bgColor: "#dfd2f5", // Richer, clearly visible Soft Berry Lilac Purple
+    eyebrow: "YOUR ONE STOP",
+    leftHeadline: "BERRY",
+    rightHeadline: "CRUSH",
+    description:
+      "Milkaboo Dirty Soda And Exotic Snacks, It's A Mouthful But That's Kind Of What We Are All About. Welcome To Your One Stop Shop For Delicious Drinks And Snacks From All Over The World.",
     drinkImage: "/images/black current.png",
+    snackImage: "/images/blackcc.png",
+    snackTitle: "Miss Berry Crunch",
     floatingElements: [
+      // 1. TOP-CENTER/LEFT: Berry cluster matching top orange position
+      {
+        src: "/images/blackcurrentmilka2.png",
+        alt: "Blackcurrant Cluster Top",
+        className:
+          "left-[27%] sm:left-[30%] md:left-[32%] lg:left-[33%] top-[3%] sm:top-[4%] md:top-[5%] w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 -rotate-[10deg] animate-float-drift-1 z-20",
+        shadowClass: "drop-shadow-[0_20px_35px_rgba(147,51,234,0.3)]",
+        popOffset: "-translate-x-8 -translate-y-8",
+      },
+      // 2. BOTTOM-RIGHT: Matching lower orange position
       {
         src: "/images/blackcurrentmilka1.png",
-        alt: "Blackcurrant Berry",
+        alt: "Wild Currant Bottom Right",
         className:
-          "-left-10 sm:-left-20 md:-left-28 lg:-left-36 top-6 sm:top-10 md:top-14 w-20 h-20 sm:w-28 sm:h-28 md:w-34 md:h-34 lg:w-40 lg:h-40 -rotate-12 animate-float-drift-1 z-30",
-        shadowClass: "drop-shadow-[0_12px_24px_rgba(147,51,234,0.22)]",
-        popOffset: "-translate-x-12 -translate-y-8",
-      },
-      {
-        src: "/images/blackcurrentmilka2.png",
-        alt: "Blackcurrant Cluster",
-        className:
-          "-right-10 sm:-right-18 md:-right-26 lg:-right-34 top-8 sm:top-12 md:top-16 w-18 h-18 sm:w-26 sm:h-26 md:w-32 md:h-32 lg:w-36 lg:h-36 rotate-15 animate-float-drift-2 z-30",
-        shadowClass: "drop-shadow-[0_12px_24px_rgba(147,51,234,0.18)]",
-        popOffset: "translate-x-12 -translate-y-8",
-      },
-      {
-        src: "/images/blackcurrentmilka7.png",
-        alt: "Wild Currant",
-        className:
-          "-left-12 sm:-left-22 md:-left-34 lg:-left-42 top-[44%] w-20 h-20 sm:w-28 sm:h-28 md:w-38 md:h-38 lg:w-44 lg:h-44 -rotate-20 animate-float-sway z-30",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(147,51,234,0.2)]",
-        popOffset: "-translate-x-14 translate-y-4",
-      },
-      {
-        src: "/images/blackcurrentmilka2.png",
-        alt: "Berry Element",
-        className:
-          "-right-12 sm:-right-22 md:-right-34 lg:-right-40 top-[40%] w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-42 lg:h-42 rotate-[20deg] animate-float-drift-3 z-30",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(147,51,234,0.18)]",
-        popOffset: "translate-x-14 translate-y-4",
-      },
-      {
-        src: "/images/boba1.png",
-        alt: "Glossy Boba Cluster",
-        className:
-          "-left-8 sm:-left-16 md:-left-20 lg:-left-26 bottom-12 sm:bottom-16 md:bottom-20 w-18 h-18 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 -rotate-12 animate-float-bob z-50",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
-        popOffset: "-translate-x-10 translate-y-10",
-      },
-      {
-        src: "/images/boba2.png",
-        alt: "Fresh Boba Pearl",
-        className:
-          "-right-8 sm:-right-14 md:-right-18 lg:-right-24 bottom-14 sm:bottom-20 md:bottom-24 w-16 h-16 sm:w-20 sm:h-20 md:w-26 md:h-26 lg:w-28 lg:h-28 rotate-15 animate-float-fast z-50",
-        shadowClass: "drop-shadow-[0_14px_28px_rgba(0,0,0,0.32)]",
+          "right-[20%] sm:right-[22%] md:right-[24%] lg:right-[25%] bottom-[2%] sm:bottom-[3%] md:bottom-[4%] w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rotate-[15deg] animate-float-drift-2 z-20",
+        shadowClass: "drop-shadow-[0_24px_40px_rgba(147,51,234,0.28)]",
         popOffset: "translate-x-10 translate-y-10",
+      },
+      // 3. TOP-RIGHT CORNER: Giant, blurred element in the top right corner, half displayed / half out of screen
+      {
+        src: "/images/blackcurrentmilka2.png",
+        alt: "Berry Element Edge Blurred",
+        className:
+          "-right-28 sm:-right-36 md:-right-44 lg:-right-52 -top-20 sm:-top-24 md:-top-32 w-72 h-72 sm:w-96 sm:h-96 md:w-[440px] md:h-[440px] lg:w-[540px] lg:h-[540px] rotate-[22deg] blur-[8px] sm:blur-[12px] opacity-85 z-10",
+        shadowClass: "drop-shadow-[0_30px_60px_rgba(147,51,234,0.35)]",
+        popOffset: "translate-x-16 -translate-y-6",
       },
     ],
   },
@@ -262,6 +211,7 @@ export default function DrinkShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  // Sync scroll progress through runway
   useEffect(() => {
     const handleScroll = () => {
       if (!containerRef.current) return;
@@ -287,97 +237,77 @@ export default function DrinkShowcase() {
 
   const currentProduct = showcaseProducts[activeIndex];
 
-  // Dynamic parallax pop & tilt driven by scrolling momentum
-  const cupTilt = Math.sin(scrollProgress * Math.PI * 2) * 2.5; // slight responsive tilt
-  const cupPopScale = 1 + Math.sin(scrollProgress * Math.PI) * 0.04; // breathing momentum pop
+  // Subtle natural momentum tilt matching reference cup angle (~6 degrees tilt)
+  const cupTilt = -4.5 + Math.sin(scrollProgress * Math.PI * 4) * 2;
+  const cupPopScale = 1 + Math.sin(scrollProgress * Math.PI * 2) * 0.025;
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[360vh] sm:h-[400vh]"
+      className="relative w-full h-[380vh] sm:h-[420vh]"
     >
-      {/* 
-        LOCALIZED SECTION BACKGROUND: 
-        Scoped exclusively within this section runway (absolute inset-0 z-0).
-        Includes a smooth bottom gradient blend so it seamlessly dissolves 
-        into the #ede6f6 background of the Flavors section without any visible cut line!
-      */}
-      <div
-        className="absolute inset-0 pointer-events-none z-0 transition-colors duration-700 ease-in-out"
-        style={{ backgroundColor: currentProduct.bgColor }}
-      >
-        {/* Seamless bottom feather/blend gradient dissolving into #ede6f6 */}
-        <div className="absolute -bottom-1 inset-x-0 h-40 sm:h-56 md:h-72 bg-gradient-to-b from-transparent via-[#ede6f6]/60 to-[#ede6f6] pointer-events-none" />
+      {/* SOLID FLAVOR-COLORED BACKDROP (cross-fades per flavor) */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        {showcaseProducts.map((product, idx) => (
+          <div
+            key={`bg-${product.id}`}
+            className={`absolute inset-0 transition-opacity duration-700 ease-out ${
+              activeIndex === idx ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ backgroundColor: product.bgColor }}
+          />
+        ))}
       </div>
 
-      {/* Sticky Viewport Container */}
-      <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 pt-16 sm:pt-20 md:pt-24 pb-6 z-10">
-        {/* Central Showcase Section */}
-        <section className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center z-10">
-          <div className="relative w-[340px] sm:w-[480px] md:w-[600px] lg:w-[700px] xl:w-[780px] flex items-center justify-center">
-            {/* Cloud behind the top of the cup (Upper Center) */}
-            <div className="absolute -top-12 sm:-top-16 inset-x-0 mx-auto w-[360px] sm:w-[500px] md:w-[600px] h-[170px] sm:h-[220px] pointer-events-none select-none z-0 opacity-75 animate-float-fast [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)] [-webkit-mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)] transition-transform duration-500">
-              <Image
-                src="/images/Home/Clouds.png"
-                alt="Upper Center Cloud"
-                fill
-                className="object-contain"
-              />
-            </div>
+      {/* Sticky Full-Viewport Hero Stage */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden select-none z-10">
 
-            {/* Cloud behind the top of the cup (Top Left) */}
-            <div className="absolute -left-28 sm:-left-40 md:-left-48 top-0 sm:top-4 w-[310px] sm:w-[430px] md:w-[500px] h-[210px] sm:h-[280px] md:h-[330px] pointer-events-none select-none z-0 opacity-80 animate-float-slow [mask-image:radial-gradient(circle_at_center,black_45%,transparent_75%)] [-webkit-mask-image:radial-gradient(circle_at_center,black_45%,transparent_75%)]">
-              <Image
-                src="/images/Home/Clouds.png"
-                alt="Top Left Cloud"
-                fill
-                className="object-contain"
-              />
-            </div>
+        {/* ================= HEADLINE BLOCK (TOP-LEFT) & RIGHT WORD ================= */}
+        <div className="absolute inset-0 pointer-events-none z-10">
+          {showcaseProducts.map((product, idx) => {
+            const isActive = activeIndex === idx;
+            return (
+              <div
+                key={`hero-words-${product.id}`}
+                className={`absolute inset-0 transition-all duration-700 ease-out will-change-transform ${
+                  isActive
+                    ? "opacity-100 scale-100 translate-y-0"
+                    : "opacity-0 scale-95 translate-y-8"
+                }`}
+              >
+                {/* LEFT: number watermark + eyebrow + giant word, left aligned */}
+                <div className="absolute left-[5%] sm:left-[7%] md:left-[9%] lg:left-[10%] top-[14%] sm:top-[15%] md:top-[16%] flex flex-col items-start text-left">
+                  <div className="relative">
+                    <span className="absolute -top-8 sm:-top-12 md:-top-14 lg:-top-16 left-2 sm:left-4 md:text-8xl text-5xl sm:text-6xl md:text-7xl lg:text-[95px] xl:text-[105px] font-[family-name:var(--font-luckiest-guy)] text-white/35 leading-none select-none">
+                      {product.num}
+                    </span>
+                    <span className="relative z-10 block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-[family-name:var(--font-luckiest-guy)] text-white tracking-tight uppercase leading-none">
+                      {product.eyebrow}
+                    </span>
+                  </div>
+                  <h1 className="mt-2 sm:mt-3 md:mt-4 text-6xl sm:text-7xl md:text-[110px] lg:text-[140px] xl:text-[175px] 2xl:text-[200px] font-[family-name:var(--font-luckiest-guy)] text-white uppercase tracking-tight leading-[0.85]">
+                    {product.leftHeadline}
+                  </h1>
+                </div>
 
-            {/* Cloud behind the top of the cup (Top Right) */}
-            <div className="absolute -right-28 sm:-right-40 md:-right-48 top-4 sm:top-6 w-[310px] sm:w-[430px] md:w-[500px] h-[210px] sm:h-[280px] md:h-[330px] pointer-events-none select-none z-0 opacity-80 animate-float-reverse [mask-image:radial-gradient(circle_at_center,black_45%,transparent_75%)] [-webkit-mask-image:radial-gradient(circle_at_center,black_45%,transparent_75%)]">
-              <Image
-                src="/images/Home/Clouds.png"
-                alt="Top Right Cloud"
-                fill
-                className="object-contain"
-              />
-            </div>
+                {/* RIGHT: second word, lower and brought closer towards the center to fit comfortably within the screen */}
+                <div className="absolute left-[52%] sm:left-[54%] md:left-[55%] lg:left-[56%] top-[34%] sm:top-[33%] md:top-[32%] max-w-[45vw]">
+                  <h1 className="text-6xl sm:text-7xl md:text-[110px] lg:text-[140px] xl:text-[175px] 2xl:text-[200px] font-[family-name:var(--font-luckiest-guy)] text-white uppercase tracking-tight leading-[0.85]">
+                    {product.rightHeadline}
+                  </h1>
+                </div>
+              </div>
+            );
+          })}
+        </div>
 
-            {/* Cloud behind the cup on the lower left */}
-            <div className="absolute -left-20 sm:-left-34 md:-left-44 bottom-8 sm:bottom-12 w-[280px] sm:w-[380px] md:w-[450px] h-[200px] sm:h-[280px] pointer-events-none select-none z-0 opacity-80 animate-float-slow [mask-image:radial-gradient(circle_at_center,black_45%,transparent_75%)] [-webkit-mask-image:radial-gradient(circle_at_center,black_45%,transparent_75%)]">
-              <Image
-                src="/images/Home/Clouds.png"
-                alt="Side Cloud Left"
-                fill
-                className="object-contain"
-              />
-            </div>
+        {/* ================= CENTERPIECE: TILTED CUP & FLOATING ELEMENTS ================= */}
+        <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+          <div className="relative w-full h-full flex items-center justify-center">
 
-            {/* Cloud behind the cup on the lower right */}
-            <div className="absolute -right-20 sm:-right-34 md:-right-44 bottom-10 sm:bottom-14 w-[280px] sm:w-[380px] md:w-[450px] h-[200px] sm:h-[280px] pointer-events-none select-none z-0 opacity-80 animate-float-reverse [mask-image:radial-gradient(circle_at_center,black_45%,transparent_75%)] [-webkit-mask-image:radial-gradient(circle_at_center,black_45%,transparent_75%)]">
-              <Image
-                src="/images/Home/Clouds.png"
-                alt="Side Cloud Right"
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            {/* Background Cloud Base behind the bottom of the cup */}
-            <div className="absolute -bottom-6 sm:-bottom-10 inset-x-0 w-full h-[160px] sm:h-[220px] pointer-events-none select-none z-0 opacity-75 [mask-image:radial-gradient(ellipse_at_bottom,black_50%,transparent_80%)] [-webkit-mask-image:radial-gradient(ellipse_at_bottom,black_50%,transparent_80%)]">
-              <Image
-                src="/images/Home/Clouds.png"
-                alt="Background Clouds Base"
-                fill
-                className="object-cover object-bottom"
-              />
-            </div>
-
-            {/* ================= CENTERPIECE DRINK CUPS (SMOOTH POP UP ANIMATION) ================= */}
+            {/* MAIN CENTER CUP */}
             <div
-              className="relative z-20 w-full flex items-center justify-center transition-transform duration-500 ease-out will-change-transform"
+              className="relative z-30 w-[380px] sm:w-[520px] md:w-[650px] lg:w-[780px] xl:w-[880px] flex items-center justify-center transition-transform duration-500 ease-out will-change-transform"
               style={{
                 transform: `scale(${cupPopScale}) rotate(${cupTilt}deg)`,
               }}
@@ -386,44 +316,46 @@ export default function DrinkShowcase() {
                 const isActive = activeIndex === idx;
                 return (
                   <div
-                    key={product.id}
-                    className={`w-full transition-all duration-700 ease-out will-change-transform ${isActive
-                      ? "opacity-100 scale-100 translate-y-0 z-20"
-                      : "opacity-0 scale-90 translate-y-8 pointer-events-none absolute inset-0 z-10"
-                      }`}
+                    key={`main-cup-${product.id}`}
+                    className={`w-full transition-all duration-700 ease-out will-change-transform ${
+                      isActive
+                        ? "opacity-100 scale-100 translate-y-0 z-30"
+                        : "opacity-0 scale-90 translate-y-12 pointer-events-none absolute inset-0 z-10"
+                    }`}
                   >
                     <Image
                       src={product.drinkImage}
                       alt={product.name}
-                      width={1200}
-                      height={1600}
+                      width={1400}
+                      height={1800}
                       priority={idx === 0}
-                      className="w-full max-h-[68vh] sm:max-h-[74vh] md:max-h-[78vh] h-auto object-contain select-none pointer-events-none drop-shadow-[0_28px_54px_rgba(0,0,0,0.22)]"
+                      className="w-full max-h-[80vh] sm:max-h-[88vh] md:max-h-[94vh] lg:max-h-[98vh] h-auto object-contain select-none pointer-events-none drop-shadow-[0_32px_60px_rgba(0,0,0,0.28)]"
                     />
                   </div>
                 );
               })}
             </div>
 
-            {/* ================= PRODUCT SPECIFIC FLOATING ELEMENTS WITH POP-UP BURST ================= */}
+            {/* FLOATING ELEMENTS (positions unchanged) */}
             {showcaseProducts.map((product, idx) => {
               const isActive = activeIndex === idx;
               return (
                 <div
-                  key={`elements-${product.id}`}
-                  className={`absolute inset-0 pointer-events-none transition-all duration-700 ease-out ${isActive
-                    ? "opacity-100 scale-100 pointer-events-auto"
-                    : "opacity-0 scale-75 pointer-events-none"
-                    }`}
+                  key={`floating-set-${product.id}`}
+                  className={`absolute inset-0 pointer-events-none transition-all duration-700 ease-out ${
+                    isActive ? "opacity-100 scale-100" : "opacity-0 scale-75"
+                  }`}
                 >
                   {product.floatingElements.map((el, elIdx) => (
                     <div
                       key={`${product.id}-el-${elIdx}`}
-                      className={`absolute pointer-events-none select-none transition-all duration-700 ease-out will-change-transform ${el.className
-                        } ${el.shadowClass || ""} ${isActive
+                      className={`absolute pointer-events-none select-none transition-all duration-700 ease-out will-change-transform ${
+                        el.className
+                      } ${el.shadowClass || ""} ${
+                        isActive
                           ? "opacity-100 scale-100 translate-x-0 translate-y-0"
                           : `opacity-0 scale-50 ${el.popOffset || ""}`
-                        }`}
+                      }`}
                     >
                       <Image
                         src={el.src}
@@ -436,37 +368,39 @@ export default function DrinkShowcase() {
                 </div>
               );
             })}
-
-            {/* FOREGROUND CLOUDS (Layered On Top of the Drink Image) */}
-            <div className="absolute -bottom-8 sm:-bottom-12 md:-bottom-16 -inset-x-8 sm:-inset-x-16 md:-inset-x-20 h-[200px] sm:h-[270px] md:h-[320px] pointer-events-none select-none z-40 opacity-95 [mask-image:linear-gradient(to_top,black_50%,transparent_90%)] [-webkit-mask-image:linear-gradient(to_top,black_50%,transparent_90%)]">
-              <Image
-                src="/images/Home/Clouds.png"
-                alt="Foreground Cloud Base Overlay"
-                fill
-                priority
-                className="object-cover object-bottom"
-              />
-            </div>
-
-            <div className="absolute -left-8 sm:-left-16 md:-left-24 -bottom-4 sm:-bottom-6 w-[250px] sm:w-[350px] md:w-[420px] h-[180px] sm:h-[220px] md:h-[260px] pointer-events-none select-none z-40 opacity-90 animate-float-slow [mask-image:radial-gradient(circle_at_center,black_50%,transparent_80%)] [-webkit-mask-image:radial-gradient(circle_at_center,black_50%,transparent_80%)]">
-              <Image
-                src="/images/Home/Clouds.png"
-                alt="Foreground Cloud Left"
-                fill
-                className="object-contain object-bottom"
-              />
-            </div>
-
-            <div className="absolute -right-8 sm:-right-16 md:-right-24 -bottom-4 sm:-bottom-6 w-[250px] sm:w-[350px] md:w-[420px] h-[180px] sm:h-[220px] md:h-[260px] pointer-events-none select-none z-40 opacity-90 animate-float-reverse [mask-image:radial-gradient(circle_at_center,black_50%,transparent_80%)] [-webkit-mask-image:radial-gradient(circle_at_center,black_50%,transparent_80%)]">
-              <Image
-                src="/images/Home/Clouds.png"
-                alt="Foreground Cloud Right"
-                fill
-                className="object-contain object-bottom"
-              />
-            </div>
           </div>
-        </section>
+        </div>
+
+        {/* ================= BOTTOM LEFT: DESCRIPTION + ORDER BUTTON ================= */}
+        <div className="absolute left-[6%] sm:left-[9%] md:left-[11%] lg:left-[12%] bottom-[6%] sm:bottom-[7%] z-40 w-[80%] max-w-xs sm:max-w-sm md:max-w-md pointer-events-auto">
+          {showcaseProducts.map((product, idx) => {
+            const isActive = activeIndex === idx;
+            return (
+              <div
+                key={`desc-${product.id}`}
+                className={`transition-all duration-500 ease-out ${
+                  isActive ? "opacity-100 translate-y-0 block" : "opacity-0 translate-y-4 hidden"
+                }`}
+              >
+                <p className="text-white text-xs sm:text-sm md:text-base leading-relaxed font-semibold">
+                  {product.description}
+                </p>
+              </div>
+            );
+          })}
+          <a
+            href="#"
+            className="mt-5 sm:mt-6 inline-flex items-center gap-2 h-12 sm:h-14 px-8 sm:px-10 rounded-full bg-white text-neutral-900 text-sm sm:text-base font-bold shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:scale-105"
+          >
+            <svg viewBox="0 0 24 24" className="w-5 h-5" aria-hidden="true">
+              <path
+                fill="#ff3008"
+                d="M22.4 8.6c-1-2-3-3.2-5.3-3.2H1.6c-.5 0-.8.6-.5 1l3 3.1c.3.3.7.5 1.1.5h11.5c.7 0 1.3.6 1.3 1.3 0 .7-.6 1.3-1.3 1.3H9.3c-.5 0-.8.6-.5 1l3 3.1c.3.3.7.5 1.1.5h3.8c4.5 0 7.6-4.5 5.7-8.6z"
+              />
+            </svg>
+            Order
+          </a>
+        </div>
       </div>
     </div>
   );
