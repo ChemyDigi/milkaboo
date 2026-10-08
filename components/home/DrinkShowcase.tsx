@@ -211,9 +211,12 @@ export default function DrinkShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  // Sync scroll progress through runway
+  // Sync scroll progress through runway + Auto-cycle when not scrolling
   useEffect(() => {
+    let lastScrollTime = 0;
+
     const handleScroll = () => {
+      lastScrollTime = Date.now();
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       const totalScrollable = rect.height - window.innerHeight;
@@ -232,7 +235,16 @@ export default function DrinkShowcase() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Automatically transition through all 4 drinks when not scrolling
+    const autoCycleTimer = setInterval(() => {
+      if (Date.now() - lastScrollTime < 1500) return;
+      setActiveIndex((prev) => (prev + 1) % showcaseProducts.length);
+    }, 4000);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearInterval(autoCycleTimer);
+    };
   }, []);
 
   const currentProduct = showcaseProducts[activeIndex];
@@ -244,7 +256,7 @@ export default function DrinkShowcase() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[380vh] sm:h-[420vh]"
+      className="relative w-full h-screen min-h-[680px] overflow-hidden select-none"
     >
       {/* SOLID FLAVOR-COLORED BACKDROP (cross-fades per flavor) */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
@@ -259,8 +271,10 @@ export default function DrinkShowcase() {
         ))}
       </div>
 
-      {/* Sticky Full-Viewport Hero Stage */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden select-none z-10">
+
+
+      {/* Full-Viewport Hero Stage */}
+      <div className="relative h-full w-full overflow-hidden select-none z-10">
 
         {/* ================= HEADLINE BLOCK (TOP-LEFT) & RIGHT WORD ================= */}
         <div className="absolute inset-0 pointer-events-none z-10">

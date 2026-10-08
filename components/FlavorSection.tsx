@@ -420,12 +420,12 @@ export default function FlavorSection() {
                       ))}
 
                       {/* HERO PRODUCT CUP/BOTTLE: In front of ingredients */}
-                      <div className="absolute inset-x-0 mx-auto -top-14 sm:-top-18 md:-top-22 lg:-top-24 w-52 h-76 sm:w-64 sm:h-92 md:w-72 md:h-[390px] lg:w-80 lg:h-[420px] z-30 pointer-events-none transition-all duration-500 ease-out group-hover:scale-108 group-hover:-translate-y-4 drop-shadow-[0_28px_40px_rgba(0,0,0,0.30)] flex items-center justify-center">
+                      <div className="absolute inset-x-0 mx-auto -top-20 sm:-top-24 md:-top-30 lg:-top-36 w-64 h-88 sm:w-80 sm:h-[420px] md:w-[370px] md:h-[480px] lg:w-[420px] lg:h-[530px] z-30 pointer-events-none transition-all duration-500 ease-out group-hover:scale-105 group-hover:-translate-y-4 drop-shadow-[0_28px_40px_rgba(0,0,0,0.30)] flex items-center justify-center">
                         <Image
                           src={item.image}
                           alt={item.name}
                           fill
-                          sizes="(max-width: 768px) 340px, 480px"
+                          sizes="(max-width: 768px) 420px, 600px"
                           className="object-contain"
                           priority={index === 0}
                         />
